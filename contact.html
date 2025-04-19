@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IzerMed Pharmacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="izericonn.png" type="image/svg+xml">
+</head>
+<body>
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="top-bar">
+        <div class="social-icon">
+            <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        
+        <div class="contact-info">
+            <a href="tel:+639912335876"><i class="fa-solid fa-phone"></i></a><br>
+            <a href="mailto:izermed@gmail.com"><span><i class="fa-solid fa-envelope"></i></span></a><br>
+        </div>
+    </div>
+
+        <div class="header-container">
+            <div class="logo">
+                <img src="izerlogo.jpg" alt="Izer Med Pharmacy">
+                <span>IzerMed Pharmacy</span>
+            </div>
+            <div class="store-locatorr">
+                <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i> Store Locator
+                </a>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterSuggestions(event)">
+                <button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
+              </div>
+              
+              <ul id="suggestions" class="search-suggestions"></ul>
+              
+              <div id="results" class="search-results"></div>
+        </div>         
+
+
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Medicine <small><i class="fa-solid fa-chevron-down"></i></small></a>
+                <div class="dropdown-content">
+                    <a href="#">Category 1</a>
+                    <a href="#">Category 2</a>
+                    <a href="#">Category 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">
+                    Categories <small><i class="fa-solid fa-chevron-down"></i></small>
+                  </a>                  
+                <div class="dropdown-content">
+                    <a href="#">Prescription Medications</a>
+                    <a href="#">Over-the-counter Medications</a>
+                    <a href="#">Vitamins & Supplements</a>
+                    <a href="#">Personal Care</a>
+                    <a href="#">Health Devices</a>
+                    <a href="#">Baby Care</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Contact Section */
+        #contactt {
+            padding: 60px 20px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        h2 {
+            text-align: center;
+            background: linear-gradient(135deg, #34A853, #1DA1F2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .container p {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .contactt-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Form */
+        .contactt-form {
+            flex: 1;
+            min-width: 300px;
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contactt-form:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contactt-form h3 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #34A853, #1DA1F2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contactt-form label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .contactt-form input,
+        .contactt-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        .contactt-form button {
+            background: linear-gradient(135deg, #34A853, #1DA1F2);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .contactt-form button:hover {
+            background: linear-gradient(135deg, #1DA1F2, #34A853);
+             transform: translateY(-3px);
+             box-shadow: 0 8px 20px rgba(29, 161, 242, 0.3);
+        }
+
+        /* Contact Information */
+        .contactt-info {
+            flex: 1;
+            min-width: 300px;
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contactt-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contactt-info h3 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #34A853, #1DA1F2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contactt-info p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .contactt-info p strong {
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Get In Touch Section -->
+    <section id="contactt">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>We’re here to assist you. Please reach out with any questions or requests.</p>
+            
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contactt-form">
+                    <h3>Contact Form</h3>
+                    <form action="#" method="POST">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Last name, First name">
+
+                        <label for="email">Email</label>
+                        <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        placeholder="example@email.com"
+                        oninvalid="this.setCustomValidity('Please enter a valid email address (e.g. user@gmail.com)')"
+                        oninput="this.setCustomValidity('')">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="" rows="4"></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <br>
+                <br>
+                <!-- Contact Info -->
+                <div class="contactt-info">
+                    <h3>Contact Information</h3>
+                    <p><strong><i class="fa-solid fa-phone "></i></strong> <a href="tel:+639912335876"> +63 991 2335 876</a></p>
+                    <p><strong><i class="fa-solid fa-envelope  "></i></strong> <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a></p>
+                    <p><a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" style="text-decoration: none; color: inherit;">
+                          <i class="fas fa-map-marker-alt"></i> 75 San Isidro St,<br>Quezon City, Metro Manila
+                        </a>
+                      </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="index.html">> Home</a></li>
+              <li><a href="#">> Medicines</a></li>
+              <li><a href="#">> Categories</a></li>
+              <li><a href="about.html">> About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+              <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-map-marker-alt"></i> 75 San Isidro St,<br>
+                Quezon City, Metro Manila
+              </a>
+            </p>
+            <p><strong><i class="fa-solid fa-phone "></i></strong> <a href="tel:+639912335876"> +63 991 2335 876</a></p>
+            <p><strong><i class="fa-solid fa-envelope "></i></strong> <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a></p>
+          </div>
+          <div class="footer-section">
+            <h3>About Izermed</h3>
+            <p>At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
+              <a href="https://twitter.com/this_user_does_not_exist_123"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+              <a href="https://instagram.com/fake_account_not_found_456"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 IzerMed. All rights reserved.</p>
+          <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">Jhon Lesther Monleon</a></p>
+        </div>
+      </footer>
+           
+    <script src="jav.js"></script>
+</body>
+</html>

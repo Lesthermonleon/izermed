@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - IzerMed Pharmacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <div id="search-results">
+        <p id="no-results" style="display: none;">No results found. Please try again with a different term.</p>
+        <ul id="results-list"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve the search query from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            
+            if (searchQuery) {
+                const resultsList = document.getElementById('results-list');
+                const noResultsMessage = document.getElementById('no-results');
+                const results = searchInNavbar(searchQuery); // This is where you handle the navbar search logic
+
+                if (results.length > 0) {
+                    noResultsMessage.style.display = 'none';
+                    results.forEach(result => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = result; // Display the matching navbar items
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    noResultsMessage.style.display = 'block';
+                }
+            }
+        });
+
+        // A function to search within the navbar
+        function searchInNavbar(query) {
+            const navbarLinks = document.querySelectorAll('.navbar a, .dropdown-content a'); // Select all navbar links and dropdown items
+            const matchingLinks = [];
+
+            navbarLinks.forEach(link => {
+                if (link.textContent.toLowerCase().includes(query.toLowerCase())) {
+                    matchingLinks.push(link.textContent); // Add matching link text to the result
+                }
+            });
+
+            return matchingLinks;
+        }
+    </script>
+</body>
+</html>
