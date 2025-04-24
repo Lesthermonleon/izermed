@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Products</title>
+  <style>
+
+.featured-products {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: linear-gradient(#f5f5f5, #e2e2e2);
+}
+
+.featured-products h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      padding-bottom: 40px;
+    }
+    
+    .carousel-track-wrapper {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .product-slide {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex: 0 0 100%;
+      padding: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .product-card {
+      background: white;
+      padding: 20px;
+      width: 230px;
+      max-width: 230px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card img {
+      height: 100px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .desc {
+      font-size: 14px;
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1;
+      color: #333;
+    }
+
+    .carousel-btn.left {
+      left: 50px;
+    }
+
+    .carousel-btn.right {
+      right: 50px;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    .carousel-title {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1200px) {
+      .product-card {
+        width: 200px; /* Adjust width for larger tablets or smaller screens */
+      }
+
+      .product-slide {
+        gap: 20px; /* Adjust gap for slightly smaller screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        width: 180px; /* Smaller product cards for mobile */
+        max-width: 180px;
+      }
+
+      .product-slide {
+        flex-wrap: wrap; /* Wrap product cards on smaller screens */
+        justify-content: center;
+      }
+
+      .carousel-btn {
+        font-size: 25px; /* Smaller carousel button size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-card {
+        width: 160px; /* Further reduce card size for very small screens */
+        max-width: 160px;
+      }
+
+      .carousel-btn {
+        font-size: 20px; /* Even smaller buttons on extra small screens */
+      }
+
+      .dots {
+        margin-top: 15px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+    
+    <section class="featured-products">
+        <h2>Featured Products of the Month</h2>
+  </div>
+
+<section class="carousel-container">
+  <div class="carousel-track-wrapper">
+    <div class="carousel-track">
+      <!-- Slide 1 -->
+      <div class="product-slide">
+        <div class="product-card">
+          <img src="bepanthen.jpg" alt="Bepanthen" />
+          <h3>BEPANTHEN SENSIDAILY</h3>
+          <p class="desc">Daily Moisturizer<br>200 mL</p>
+          <p class="price">₱1,278.00</p>
+        </div>
+        <div class="product-card">
+          <img src="buscopan.jpg" alt="Buscopan" />
+          <h3>BUSCOPAN</h3>
+          <p class="desc">10 mg Tablet</p>
+          <p class="price">₱33.50</p>
+        </div>
+        <div class="product-card">
+          <img src="buscopan-venus.jpg" alt="Buscopan Venus" />
+          <h3>BUSCOPAN VENUS</h3>
+          <p class="desc">10 mg / 500 mg</p>
+          <p class="price">₱40.50</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="product-slide">
+        <div class="product-card">
+          <img src="paracetamol.jpg" alt="Paracetamol" />
+          <h3>PARACETAMOL</h3>
+          <p class="desc">500 mg Tablet</p>
+          <p class="price">₱5.00</p>
+        </div>
+        <div class="product-card">
+          <img src="amoxicillin.jpg" alt="Amoxicillin" />
+          <h3>AMOXICILLIN</h3>
+          <p class="desc">500 mg Capsule</p>
+          <p class="price">₱30.00</p>
+        </div>
+        <div class="product-card">
+          <img src="aspirin.jpg" alt="Aspirin" />
+          <h3>ASPIRIN</h3>
+          <p class="desc">300 mg Tablet</p>
+          <p class="price">₱20.00</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="product-slide">
+        <div class="product-card">
+          <img src="calpol.jpg" alt="Calpol" />
+          <h3>CALPOL</h3>
+          <p class="desc">Children's Syrup</p>
+          <p class="price">₱120.00</p>
+        </div>
+        <div class="product-card">
+          <img src="biogesic.jpg" alt="Biogesic" />
+          <h3>BIOGESIC</h3>
+          <p class="desc">500 mg Tablet</p>
+          <p class="price">₱10.00</p>
+        </div>
+        <div class="product-card">
+          <img src="dolo.jpg" alt="Dolo" />
+          <h3>DOLO</h3>
+          <p class="desc">500 mg Tablet</p>
+          <p class="price">₱25.00</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="product-slide">
+        <div class="product-card">
+          <img src="advil.jpg" alt="Advil" />
+          <h3>ADVIL</h3>
+          <p class="desc">200 mg Tablet</p>
+          <p class="price">₱35.00</p>
+        </div>
+        <div class="product-card">
+          <img src="teraflu.jpg" alt="Teraflu" />
+          <h3>TERAFLU</h3>
+          <p class="desc">Cold & Flu</p>
+          <p class="price">₱75.00</p>
+        </div>
+        <div class="product-card">
+          <img src="loratadine.jpg" alt="Loratadine" />
+          <h3>LORATADINE</h3>
+          <p class="desc">10 mg Tablet</p>
+          <p class="price">₱50.00</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="carousel-btn left">&#10094;</button>
+  <button class="carousel-btn right">&#10095;</button>
+
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+
+</section>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.product-slide');
+  const dots = document.querySelectorAll('.dot');
+  const leftBtn = document.querySelector('.carousel-btn.left');
+  const rightBtn = document.querySelector('.carousel-btn.right');
+
+  let currentSlide = 0;
+  let autoplayInterval;
+
+  function goToSlide(index) {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${slideWidth * index}px)`; // Ensure slides move horizontally
+    currentSlide = index;
+    updateDots();
+  }
+
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[currentSlide]) {
+      dots[currentSlide].classList.add('active');
+    }
+  }
+
+  leftBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      goToSlide(currentSlide - 1); // Move left
+    }
+  });
+
+  rightBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      goToSlide(currentSlide + 1); // Move right
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    goToSlide(currentSlide);
+  });
+
+  // Autoplay functionality with pause on hover
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      if (currentSlide < slides.length - 1) {
+        goToSlide(currentSlide + 1);
+      } else {
+        goToSlide(0); // Reset to first slide
+      }
+    }, 3000);
+  }
+
+  track.addEventListener('mouseover', () => clearInterval(autoplayInterval)); // Pause autoplay
+  track.addEventListener('mouseout', startAutoplay); // Restart autoplay on mouseout
+
+  startAutoplay(); // Start autoplay initially
+</script>
+</body>
+</html>

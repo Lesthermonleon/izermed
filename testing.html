@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IzerMed Testimonials</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+    }
+
+    section#testimonials {
+      background: #f9f9f9;
+      padding: 60px 15px;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #009688;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .swiper {
+      max-width: 1000px;
+      padding-bottom: 40px;
+      margin: 0 auto;
+    }
+
+    .swiper-slide {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 0.6s ease forwards;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .profile-img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #009688;
+    }
+
+    .name {
+      font-weight: bold;
+      color: #009688;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #009688;
+    }
+  </style>
+</head>
+<body>
+
+<section id="testimonials">
+  <div class="container">
+    <h2>What Our Customers Say</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Testimonial Slides -->
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" class="profile-img" />
+          <div class="name">Anna Dela Cruz</div>
+          <div class="location">Quezon City</div>
+          <div class="message">IzerMed Pharmacy always has what I need. Fast delivery and friendly staff!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/44.jpg" class="profile-img" />
+          <div class="name">Mark Velasco</div>
+          <div class="location">Makati City</div>
+          <div class="message">Reliable and affordable. Their online system is smooth and fast!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/29.jpg" class="profile-img" />
+          <div class="name">Jasmin Reyes</div>
+          <div class="location">Davao City</div>
+          <div class="message">Helpful pharmacists and a wide variety of wellness items.</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/33.jpg" class="profile-img" />
+          <div class="name">Leo Fernandez</div>
+          <div class="location">Pasig City</div>
+          <div class="message">IzerMed delivered my meds within 2 hours. Amazing speed!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/77.jpg" class="profile-img" />
+          <div class="name">Bea Santos</div>
+          <div class="location">Cebu City</div>
+          <div class="message">The care I received at IzerMed was heartfelt. Highly recommended!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/21.jpg" class="profile-img" />
+          <div class="name">Carlos Mendez</div>
+          <div class="location">Taguig</div>
+          <div class="message">Great product availability and knowledgeable staff!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" class="profile-img" />
+          <div class="name">Kyla Dominguez</div>
+          <div class="location">Bacolod</div>
+          <div class="message">Ordering meds online is super easy now. Thanks, IzerMed!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/60.jpg" class="profile-img" />
+          <div class="name">Juan Dizon</div>
+          <div class="location">Baguio City</div>
+          <div class="message">The staff are courteous and knowledgeable. I feel safe buying here.</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/18.jpg" class="profile-img" />
+          <div class="name">Angela Cruz</div>
+          <div class="location">Antipolo</div>
+          <div class="message">Love the wellness product bundles! And the deals are great too.</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/50.jpg" class="profile-img" />
+          <div class="name">Francis Uy</div>
+          <div class="location">Manila</div>
+          <div class="message">My grandma got her medicine with no hassle. Thank you, IzerMed!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" class="profile-img" />
+          <div class="name">Cheska Lim</div>
+          <div class="location">Calamba</div>
+          <div class="message">The loyalty card they offer gives great perks and discounts!</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/men/27.jpg" class="profile-img" />
+          <div class="name">Ramon Bautista</div>
+          <div class="location">Valenzuela</div>
+          <div class="message">IzerMed customer support is excellent. Prompt and helpful always.</div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="https://randomuser.me/api/portraits/women/37.jpg" class="profile-img" />
+          <div class="name">Louise Rivera</div>
+          <div class="location">San Fernando</div>
+          <div class="message">Very clean packaging, secure delivery, and easy-to-use app!</div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

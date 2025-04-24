@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Featured Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#f5f5f5, #e2e2e2);
+    }
+
+    .featured-products {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .featured-products h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .product {
+      min-width: 300px;
+      padding: 20px;
+      background: white;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .product .desc {
+      font-size: 14px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .product .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: #333;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .carousel-btn.left {
+      left: -40px;
+    }
+
+    .carousel-btn.right {
+      right: -40px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="featured-products">
+  <h2>Featured Products of the Month</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn left">&#10094;</button>
+    <div class="carousel-track">
+      <div class="product">
+        <img src="bepanthen.jpg" alt="Bepanthen Sensidaily">
+        <h3>BEPANTHEN<br>SENSIDAILY</h3>
+        <p class="desc">Daily Moisturizer<br>200 mL</p>
+        <p class="price">₱1,278.00</p>
+      </div>
+      <div class="product">
+        <img src="buscopan.jpg" alt="Buscopan">
+        <h3>BUSCOPAN</h3>
+        <p class="desc">10 mg Tablet</p>
+        <p class="price">₱33.50</p>
+      </div>
+      <div class="product">
+        <img src="buscopan-venus.jpg" alt="Buscopan Venus">
+        <h3>BUSCOPAN VENUS</h3>
+        <p class="desc">10 mg / 500 mg<br>Film Coated Tablet</p>
+        <p class="price">₱40.50</p>
+      </div>
+    </div>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+</section>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const leftBtn = document.querySelector('.carousel-btn.left');
+  const rightBtn = document.querySelector('.carousel-btn.right');
+  let position = 0;
+
+  rightBtn.addEventListener('click', () => {
+    if (position > -600) {
+      position -= 310;
+      track.style.transform = `translateX(${position}px)`;
+    }
+  });
+
+  leftBtn.addEventListener('click', () => {
+    if (position < 0) {
+      position += 310;
+      track.style.transform = `translateX(${position}px)`;
+    }
+  });
+</script>
+
+</body>
+</html>

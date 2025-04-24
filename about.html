@@ -1,82 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IzerMed Pharmacy</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="izericonn.png" type="image/svg+xml">
-</head>
-<body>
-    <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="top-bar">
-        <div class="social-icon">
-            <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" class="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        
-        <div class="contact-info">
-            <a href="tel:+639912335876"><i class="fa-solid fa-phone"></i></a><br>
-            <a href="mailto:izermed@gmail.com"><span><i class="fa-solid fa-envelope"></i></span></a><br>
-        </div>
-    </div>
-
-        <div class="header-container">
-            <div class="logo">
-                <img src="izerlogo.jpg" alt="Izer Med Pharmacy">
-                <span>IzerMed Pharmacy</span>
-            </div>
-            <div class="store-locatorr">
-                <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i> Store Locator
-                </a>
-            </div>
-
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterSuggestions(event)">
-                <button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
-              </div>
-              
-              <ul id="suggestions" class="search-suggestions"></ul>
-              
-              <div id="results" class="search-results"></div>
-        </div>         
-
-
-    <nav class="navbar" id="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Medicine <small><i class="fa-solid fa-chevron-down"></i></small></a>
-                <div class="dropdown-content">
-                    <a href="#">Category 1</a>
-                    <a href="#">Category 2</a>
-                    <a href="#">Category 3</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">
-                    Categories <small><i class="fa-solid fa-chevron-down"></i></small>
-                  </a>                  
-                <div class="dropdown-content">
-                    <a href="#">Prescription Medications</a>
-                    <a href="#">Over-the-counter Medications</a>
-                    <a href="#">Vitamins & Supplements</a>
-                    <a href="#">Personal Care</a>
-                    <a href="#">Health Devices</a>
-                    <a href="#">Baby Care</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Contact us</a></li>
-        </ul>
-    </nav>
+  <meta charset="UTF-8">
+  <title>Izer Med Pharmacy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         /* General Styles */
         body {
@@ -250,6 +180,75 @@
 </head>
 <body>
 
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1AjAem9qd2/?mibextid=wwXIfr" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="contact-info">
+            <a href="https://www.google.com/maps?q=14.6921769,121.0829287"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="tel:+639123456789"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:izermed@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    
+    
+      <div class="header">
+        <div class="logo">
+          <img src="izerlogo.jpg" alt="Logo">
+          <h2>Izer Med Pharmacy</h2>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    
+    
+      <div class="mobile-header">
+        <div class="mobile-left">
+          <img src="izerlogo.jpg" alt="Logo">
+          <h2>Izer Med Pharmacy</h2>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    
+    
+      <div class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Medicine <i class="fa-solid fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#">Prescription</a>
+              <a href="#">Over-the-Counter</a>
+              <a href="#">Vitamins & Supplements</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Categories <i class="fa-solid fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Prescription Medications</a>
+                <a href="#">Over-the-counter Medications</a>
+                <a href="#">Vitamins & Supplements</a>
+                <a href="#">Personal Care</a>
+                <a href="#">Health Devices</a>
+                <a href="#">Baby Care</a>
+            </div>
+          </div>
+        <a href="contact.html">Contact us</a>
+      </div>
+
     <div class="container">
         <h1>About Us</h1>
         <div class="about-section">
@@ -276,43 +275,102 @@
         </div>
     </div>
 
-<footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>Useful Links</h3>
-        <ul>
-          <li><a href="index.html">> Home</a></li>
-          <li><a href="#">> Medicines</a></li>
-          <li><a href="#">> Categories</a></li>
-          <li><a href="about.html">> About Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>
-          <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" style="text-decoration: none; color: inherit;">
-            <i class="fas fa-map-marker-alt"></i> 75 San Isidro St,<br>
-            Quezon City, Metro Manila
-          </a>
-        </p>
-        <p><strong><i class="fa-solid fa-phone "></i></strong> <a href="tel:+639912335876"> +63 991 2335 876</a></p>
-        <p><strong><i class="fa-solid fa-envelope "></i></strong> <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>About Izermed</h3>
-        <p>At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
-          <a href="https://twitter.com/this_user_does_not_exist_123"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-          <a href="https://instagram.com/fake_account_not_found_456"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="index.html">› Home</a></li>
+              <li><a href="#">› Medicines</a></li>
+              <li><a href="#">› Categories</a></li>
+              <li><a href="about.html">› About Us</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+              <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" rel="noopener" aria-label="Google Maps Location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>75 San Isidro St,<br>Quezon City, Metro Manila</span>
+              </a>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+639912335876"> +63 991 2335 876</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a>
+            </p>
+          </div>
+      
+          <div class="footer-section">
+            <h3>About Izermed</h3>
+            <p>
+              At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.
+            </p>
+            <div class="social-iconss">
+              <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/this_user_does_not_exist_123" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com/fake_account_not_found_456" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 IzerMed. All rights reserved.</p>
-      <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">Jhon Lesther Monleon</a></p>
-    </div>
-  </footer>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 IzerMed. All rights reserved.</p>
+          <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
+        </div>
+      </footer>
+      <script>
+        function toggleDropdown(element) {
+          const dropdown = element.parentElement;
+          dropdown.classList.toggle("active");
+      
+          // Close other dropdowns
+          document.querySelectorAll(".dropdown").forEach(el => {
+            if (el !== dropdown) {
+              el.classList.remove("active");
+            }
+          });
+        }
+      
+        // Close dropdowns when clicking outside
+        window.addEventListener("click", function(e) {
+          if (!e.target.closest(".dropdown")) {
+            document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
+          }
+        });
+      </script>
+      
+      <script>
+        function toggleMenu() {
+          const navbar = document.getElementById('navbar');
+          const menuToggle = document.getElementById('menu-toggle');
+          navbar.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        }
+    
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector(".header");
+          const mobileHeader = document.querySelector(".mobile-header");
+    
+          if (window.scrollY > 20) {
+            if (header) header.classList.add("shrink");
+            if (mobileHeader) mobileHeader.classList.add("shrink");
+          } else {
+            if (header) header.classList.remove("shrink");
+            if (mobileHeader) mobileHeader.classList.remove("shrink");
+          }
+        });
+      </script>
        
   <script>
         const observer = new IntersectionObserver((entries) => {
@@ -329,7 +387,6 @@
             observer.observe(section);
         });
     </script>
-<script src="jav.js"></script>
 
 </body>
 </html>

@@ -1,127 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IzerMed Pharmacy</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="izericonn.png" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <title>Izer Med Pharmacy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
-    <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
+  <div class="top-bar">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1AjAem9qd2/?mibextid=wwXIfr" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
-    <div class="top-bar">
-        <div class="social-icon">
-            <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" class="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div class="contact-info">
-          <a href="https://www.google.com/maps?q=14.6921769,121.0829287">
-            <i class="fas fa-map-marker-alt"></i></a><br>
-            <a href="tel:+639912335876"><i class="fa-solid fa-phone"></i></a><br>
-            <a href="mailto:izermed@gmail.com"><span><i class="fa-solid fa-envelope"></i></span></a><br>
-        </div>
+    <div class="contact-info">
+        <a href="https://www.google.com/maps?q=14.6921769,121.0829287"><i class="fa-solid fa-location-dot"></i></a>
+        <a href="tel:+639123456789"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:izermed@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     </div>
-
-        <div class="header-container">
-            <div class="logo">
-                <img src="izerlogo.jpg" alt="Izer Med Pharmacy">
-                <span>IzerMed Pharmacy</span>
-            </div>
-
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterSuggestions(event)">
-                <button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
-              </div>
-              
-              <ul id="suggestions" class="search-suggestions"></ul>
-              
-              <div id="results" class="search-results"></div>
-        </div>         
+  </div>
 
 
-    <nav class="navbar" id="navbar">
+  <div class="header">
+    <div class="logo">
+      <img src="izerlogo.jpg" alt="Logo">
+      <h2>Izer Med Pharmacy</h2>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+
+
+  <div class="mobile-header">
+    <div class="mobile-left">
+      <img src="izerlogo.jpg" alt="Logo">
+      <h2>Izer Med Pharmacy</h2>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+
+  <div class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About us</a>
+    <div class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Medicine <i class="fa-solid fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#">Prescription</a>
+          <a href="#">Over-the-Counter</a>
+          <a href="#">Vitamins & Supplements</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Categories <i class="fa-solid fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Prescription Medications</a>
+            <a href="#">Over-the-counter Medications</a>
+            <a href="#">Vitamins & Supplements</a>
+            <a href="#">Personal Care</a>
+            <a href="#">Health Devices</a>
+            <a href="#">Baby Care</a>
+        </div>
+      </div>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <section class="intro-section">
+    <div class="overlay"></div>
+    <div class="intro-content">
+      <h1>Generic or Branded,<br>Always Trusted – Your Pharmacy Partner.</h1>
+      <p>Izermed Pharmacy offers high-quality generic and branded medicines, ensuring safe, effective, and reliable healthcare for all.</p>
+    </div>
+  </section>
+  <section class="featured-products">
+    <h2>Featured Products of the Month</h2>
+</div>
+<section class="carousel-container">
+<div class="carousel-track-wrapper">
+<div class="carousel-track">
+  <!-- Slide 1 -->
+  <div class="product-slide">
+    <div class="product-card">
+      <img src="1.png" alt="Bepanthen" />
+      <h3>BEPANTHEN SENSIDAILY</h3>
+      <p class="desc">Daily Moisturizer<br>200 mL</p>
+      <p class="price">₱1,278.00</p>
+    </div>
+    <div class="product-card">
+      <img src="2.png" alt="Buscopan" />
+      <h3>BUSCOPAN</h3>
+      <p class="desc">10 mg Tablet</p>
+      <p class="price">₱33.00</p>
+    </div>
+    <div class="product-card">
+      <img src="3.png" alt="Buscopan Venus" />
+      <h3>BUSCOPAN VENUS</h3>
+      <p class="desc">10 mg / 500 mg</p>
+      <p class="price">₱40.00</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="product-slide">
+    <div class="product-card">
+      <img src="4.png" alt="Essentiale forte p" />
+      <h3>ESSENTIALE FORETE P</h3>
+      <p class="desc">300 mg Tablet</p>
+      <p class="price">₱38.00</p>
+    </div>
+    <div class="product-card">
+      <img src="5.png" alt="Erceflora kiddie" />
+      <h3>ERCEFLORA KIDDIE</h3>
+      <p class="desc">5 mL</p>
+      <p class="price">₱30.00</p>
+    </div>
+    <div class="product-card">
+      <img src="6.png" alt="Immunpro " />
+      <h3>IMMUNE PRO</h3>
+      <p class="desc">500mg / 10mg Tablet</p>
+      <p class="price">₱9.00</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="product-slide">
+    <div class="product-card">
+      <img src="7.png" alt="Berocca" />
+      <h3>Berocca Mixed Berries Energy Vitamins Effervescent</h3>
+      <p class="desc">Tablet - 15s</p>
+      <p class="price">3450.00</p>
+    </div>
+    <div class="product-card">
+      <img src="8.png" alt="Bravo" />
+      <h3>Bravo</h3>
+      <p class="desc">Bravo Capsule - 2st</p>
+      <p class="price">₱360.00</p>
+    </div>
+    <div class="product-card">
+      <img src="9.png" alt="Robust." />
+      <h3>ROBUST</h3>
+      <p class="desc">550mg Tablet</p>
+      <p class="price">₱150.00</p>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="product-slide">
+    <div class="product-card">
+      <img src="10.png" alt="Advil" />
+      <h3>NIDO Jr. POWDER MILK</h3>
+      <p class="desc">1.6kg</p>
+      <p class="price">₱1,030.00</p>
+    </div>
+    <div class="product-card">
+      <img src="11.png.png" alt="Pocari sweat ion" />
+      <h3>Pocari Sweat Ion</h3>
+      <p class="desc">500ml</p>
+      <p class="price">₱50.00</p>
+    </div>
+    <div class="product-card">
+      <img src="12.png" alt="Bonakid powder milk" />
+      <h3>BONAKID POWDER MILK</h3>
+      <p class="desc">2kg BOX</p>
+      <p class="price">₱1,160.00</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<button class="carousel-btn left">&#10094;</button>
+<button class="carousel-btn right">&#10095;</button>
+
+<div class="dots">
+<span class="dot active" onclick="goToSlide(0)"></span>
+<span class="dot" onclick="goToSlide(1)"></span>
+<span class="dot" onclick="goToSlide(2)"></span>
+<span class="dot" onclick="goToSlide(3)"></span>
+</div>
+</section>
+
+<section id="testimonials">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+  
+          <!-- Testimonial Slides -->
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="profile-img" />
+            <div class="name">Anna Dela Cruz</div>
+            <div class="location">Quezon City</div>
+            <div class="message">IzerMed Pharmacy always has what I need. Fast delivery and friendly staff!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/44.jpg" class="profile-img" />
+            <div class="name">Mark Velasco</div>
+            <div class="location">Makati City</div>
+            <div class="message">Reliable and affordable. Their online system is smooth and fast!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/29.jpg" class="profile-img" />
+            <div class="name">Jasmin Reyes</div>
+            <div class="location">Davao City</div>
+            <div class="message">Helpful pharmacists and a wide variety of wellness items.</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="profile-img" />
+            <div class="name">Leo Fernandez</div>
+            <div class="location">Pasig City</div>
+            <div class="message">IzerMed delivered my meds within 2 hours. Amazing speed!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/77.jpg" class="profile-img" />
+            <div class="name">Bea Santos</div>
+            <div class="location">Cebu City</div>
+            <div class="message">The care I received at IzerMed was heartfelt. Highly recommended!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/21.jpg" class="profile-img" />
+            <div class="name">Carlos Mendez</div>
+            <div class="location">Taguig</div>
+            <div class="message">Great product availability and knowledgeable staff!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/12.jpg" class="profile-img" />
+            <div class="name">Kyla Dominguez</div>
+            <div class="location">Bacolod</div>
+            <div class="message">Ordering meds online is super easy now. Thanks, IzerMed!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/60.jpg" class="profile-img" />
+            <div class="name">Juan Dizon</div>
+            <div class="location">Baguio City</div>
+            <div class="message">The staff are courteous and knowledgeable. I feel safe buying here.</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/18.jpg" class="profile-img" />
+            <div class="name">Angela Cruz</div>
+            <div class="location">Antipolo</div>
+            <div class="message">Love the wellness product bundles! And the deals are great too.</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/50.jpg" class="profile-img" />
+            <div class="name">Francis Uy</div>
+            <div class="location">Manila</div>
+            <div class="message">My grandma got her medicine with no hassle. Thank you, IzerMed!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg" class="profile-img" />
+            <div class="name">Cheska Lim</div>
+            <div class="location">Calamba</div>
+            <div class="message">The loyalty card they offer gives great perks and discounts!</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/men/27.jpg" class="profile-img" />
+            <div class="name">Ramon Bautista</div>
+            <div class="location">Valenzuela</div>
+            <div class="message">IzerMed customer support is excellent. Prompt and helpful always.</div>
+          </div>
+  
+          <div class="swiper-slide">
+            <img src="https://randomuser.me/api/portraits/women/37.jpg" class="profile-img" />
+            <div class="name">Louise Rivera</div>
+            <div class="location">San Fernando</div>
+            <div class="message">Very clean packaging, secure delivery, and easy-to-use app!</div>
+          </div>
+  
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Useful Links</h3>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Medicine <small><i class="fa-solid fa-chevron-down"></i></small></a>
-                <div class="dropdown-content">
-                    <a href="#">Category 1</a>
-                    <a href="#">Category 2</a>
-                    <a href="#">Category 3</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">
-                    Categories <small><i class="fa-solid fa-chevron-down"></i></small>
-                  </a>                  
-                <div class="dropdown-content">
-                    <a href="#">Prescription Medications</a>
-                    <a href="#">Over-the-counter Medications</a>
-                    <a href="#">Vitamins & Supplements</a>
-                    <a href="#">Personal Care</a>
-                    <a href="#">Health Devices</a>
-                    <a href="#">Baby Care</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Contact us</a></li>
+          <li><a href="index.html">› Home</a></li>
+          <li><a href="#">› Medicines</a></li>
+          <li><a href="#">› Categories</a></li>
+          <li><a href="about.html">› About Us</a></li>
         </ul>
-    </nav>
-
-
-    <section class="intro-section">
-        <div class="overlay"></div>
-        <div class="intro-content">
-          <h1>Generic or Branded,<br>Always Trusted – Your Pharmacy Partner.</h1>
-          <p>Izermed Pharmacy offers high-quality generic and branded medicines, ensuring safe, effective, and reliable healthcare for all.</p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>
+          <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" rel="noopener" aria-label="Google Maps Location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>75 San Isidro St,<br>Quezon City, Metro Manila</span>
+          </a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+639912335876"> +63 991 2335 876</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a>
+        </p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>About Izermed</h3>
+        <p>
+          At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.
+        </p>
+        <div class="social-iconss">
+          <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/this_user_does_not_exist_123" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/fake_account_not_found_456" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
-      </section>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 IzerMed. All rights reserved.</p>
+      <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
+    </div>
+  </footer>
+  
 
+  <script>
+    function toggleDropdown(element) {
+      const dropdown = element.parentElement;
+      dropdown.classList.toggle("active");
+  
+      // Close other dropdowns
+      document.querySelectorAll(".dropdown").forEach(el => {
+        if (el !== dropdown) {
+          el.classList.remove("active");
+        }
+      });
+    }
+  
+    // Close dropdowns when clicking outside
+    window.addEventListener("click", function(e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
+      }
+    });
+  </script>
+  
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      navbar.classList.toggle('show');
+      menuToggle.classList.toggle('open');
+    }
 
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <h3>Useful Links</h3>
-            <ul>
-              <li><a href="index.html">> Home</a></li>
-              <li><a href="#">> Medicines</a></li>
-              <li><a href="#">> Categories</a></li>
-              <li><a href="about.html">> About Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p>
-              <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-map-marker-alt"></i> 75 San Isidro St,<br>
-                Quezon City, Metro Manila
-              </a>
-            </p>
-            <p><strong><i class="fa-solid fa-phone "></i></strong> <a href="tel:+639912335876"> +63 991 2335 876</a></p>
-            <p><strong><i class="fa-solid fa-envelope "></i></strong> <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a></p>
-          </div>
-          <div class="footer-section">
-            <h3>About Izermed</h3>
-            <p>At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.</p>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
-              <a href="https://twitter.com/this_user_does_not_exist_123"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-              <a href="https://instagram.com/fake_account_not_found_456"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 IzerMed. All rights reserved.</p>
-          <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">Jhon Lesther Monleon</a></p>
-        </div>
-      </footer>
-           
-    <script src="jav.js"></script>
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".header");
+      const mobileHeader = document.querySelector(".mobile-header");
+
+      if (window.scrollY > 20) {
+        if (header) header.classList.add("shrink");
+        if (mobileHeader) mobileHeader.classList.add("shrink");
+      } else {
+        if (header) header.classList.remove("shrink");
+        if (mobileHeader) mobileHeader.classList.remove("shrink");
+      }
+    });
+  </script>
+<script>
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.product-slide');
+    const dots = document.querySelectorAll('.dot');
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+  
+    let currentSlide = 0;
+    let autoplayInterval;
+  
+    function goToSlide(index) {
+      const slideWidth = slides[0].offsetWidth;
+      track.style.transform = `translateX(-${slideWidth * index}px)`; // Ensure slides move horizontally
+      currentSlide = index;
+      updateDots();
+    }
+  
+    function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
+      }
+    }
+  
+    leftBtn.addEventListener('click', () => {
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1); // Move left
+      }
+    });
+  
+    rightBtn.addEventListener('click', () => {
+      if (currentSlide < slides.length - 1) {
+        goToSlide(currentSlide + 1); // Move right
+      }
+    });
+  
+    window.addEventListener('resize', () => {
+      goToSlide(currentSlide);
+    });
+  
+    // Autoplay functionality with pause on hover
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        if (currentSlide < slides.length - 1) {
+          goToSlide(currentSlide + 1);
+        } else {
+          goToSlide(0); // Reset to first slide
+        }
+      }, 3000);
+    }
+  
+    track.addEventListener('mouseover', () => clearInterval(autoplayInterval)); // Pause autoplay
+    track.addEventListener('mouseout', startAutoplay); // Restart autoplay on mouseout
+  
+    startAutoplay(); // Start autoplay initially
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  </script>
+  
 </body>
 </html>

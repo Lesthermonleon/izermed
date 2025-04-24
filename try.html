@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Izer Med Pharmacy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(to bottom, #f5f5f5, #d6e5d8); color: #333;">
+
+  <header>
+    <nav id="navbar">
+      <div class="logo">Izer Med</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li>
+          <a href="#" onclick="toggleDropdown(this)">Medicine ▼</a>
+          <ul class="dropdown">
+            <li><a href="#antibiotics">Antibiotics</a></li>
+            <li><a href="#painrelievers">Pain Relievers</a></li>
+            <li><a href="#vitamins">Vitamins</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleDropdown(this)">Blog ▼</a>
+          <ul class="dropdown">
+            <li><a href="#news">News</a></li>
+            <li><a href="#healthtips">Health Tips</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Welcome to Izer Med Pharmacy</h1>
+    <p>Your one-stop solution for all your medical needs.</p>
+  </section>
+
+  <section class="featured-products">
+    <h2>Featured Products of the Month</h2>
+    <section class="carousel-container">
+      <div class="carousel-track">
+        <div class="product-slide">
+          <img src="11.png" alt="Pocari sweat ion" />
+          <h3>Pocari Sweat Ion</h3>
+          <p class="price">₱3,450.00</p>
+        </div>
+        <div class="product-slide">
+          <img src="15.png" alt="Creamsilk Hairfall Defense" />
+          <h3>Creamsilk Hairfall Defense</h3>
+          <p class="price">₱1,200.00</p>
+        </div>
+        <div class="product-slide">
+          <img src="14.png" alt="Safeguard Floral Pink" />
+          <h3>Safeguard Floral Pink</h3>
+          <p class="price">₱990.00</p>
+        </div>
+      </div>
+      <button class="carousel-btn left">&#10094;</button>
+      <button class="carousel-btn right">&#10095;</button>
+      <div class="carousel-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p>"Great selection and fast delivery. Highly recommend!"</p>
+          <h4>- Maria G.</h4>
+        </div>
+        <div class="swiper-slide">
+          <p>"Affordable prices and friendly service every time."</p>
+          <h4>- Juan D.</h4>
+        </div>
+        <div class="swiper-slide">
+          <p>"Their online ordering system is so convenient."</p>
+          <h4>- Liza M.</h4>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Izer Med Pharmacy is dedicated to providing high-quality medicines and healthcare products at affordable prices. Our team is committed to ensuring every customer receives the best service possible.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Izer Med Pharmacy. All rights reserved.</p>
+    <div>
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("active");
+    }
+
+    function toggleDropdown(element) {
+      const dropdown = element.nextElementSibling;
+      dropdown.classList.toggle("show");
+    }
+
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".product-slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function goToSlide(index) {
+      slideIndex = index;
+      document.querySelector(".carousel-track").style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    document.querySelector(".carousel-btn.left").addEventListener("click", () => {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      goToSlide(slideIndex);
+    });
+
+    document.querySelector(".carousel-btn.right").addEventListener("click", () => {
+      slideIndex = (slideIndex + 1) % slides.length;
+      goToSlide(slideIndex);
+    });
+
+    goToSlide(0);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+
+</body>
+</html>
