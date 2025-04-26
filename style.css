@@ -16,7 +16,7 @@
     }
 
     .top-bar {
-      background: rgba(105, 225, 83, 0.8);
+      background: linear-gradient(135deg, #34A853, #1DA1F2);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
@@ -63,21 +63,52 @@
       color: #333;
     }
 
+    @media (max-width: 768px) {
+      .header {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center; 
+        padding: 10px 20px;
+      }
+      #menu-toggle {
+        order: -1;  
+        margin: 0;  
+        padding: 0; 
+      }
+    
+      .logo {
+        margin-left: 0;  
+        padding-left: 0;  
+      }
+      .dropdown-content {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .dropdown-content a {
+        padding: 8px 10px;
+        border-bottom: none;
+      }
+    }
+    
+
     .header,
     .mobile-header {
+      position: relative;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 10px 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin: 0 10px;
       position: sticky;
-      top: 40px;
+      top: 39px;
       z-index: 998;
       transition: all 0.3s ease;
+      padding-bottom: 1px;
+      padding-top: 1px;
     }
 
     .logo {
@@ -123,29 +154,201 @@
       transition: all 0.3s ease;
     }
 
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border-radius: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 5px 15px;
-      transition: all 0.3s ease;
-    }
+  /* General Search Box Wrapper */
+.search-box-wrapper {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%; /* Full width for mobile responsiveness */
+  max-width: 270px; /* Max width for large screens */
+  padding: 10px;
+}
 
-    .search-box input {
-      border: none;
-      outline: none;
-      font-size: 16px;
-      background: transparent;
-      padding: 5px;
-      width: 150px;
-    }
+/* Search input box */
+.search-box {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
 
-    .search-box i {
-      font-size: 16px;
-      color: #555;
-    }
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+  color: #333;
+  padding-right: 10px;
+}
+
+.search-box i {
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.search-box i:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Suggestions Dropdown */
+.search-results {
+  position: absolute;
+  top: 85%; /* Align below the input box */
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  display: none;
+  z-index: 1; /* Ensures it shows above other elements */
+  max-height: 200px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Suggestions item styles */
+.search-results div {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-results div:hover {
+  background-color: #f9f9f9;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .search-box-wrapper {
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    font-size: 14px;
+    padding-right: 40px;
+  }
+
+  .search-results {
+    width: 95%;
+  }
+}
+
+
+    /* Container for user icon and cart */
+.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: visible; 
+  z-index: 9999;
+}
+
+.dropdown {
+  position: relative;
+}
+
+#user-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  width: 100%;
+  min-width: 180px;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+@media (max-width: 768px) {
+  .dropdown-menu {
+    top: 40px;  /* Adjust dropdown positioning */
+    width: 100%;
+    right: 0;
+    display: none;
+    z-index: 9999;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu.show {
+    display: block; /* Show the dropdown when the "show" class is added */
+  }
+}
+
+
+.dropdown-menu a {
+  display: block;
+  align-items: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a i {
+  margin-right: 8px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+
+/* Cart icon */
+.user > a > i.fa-shopping-cart {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 
     .menu-toggle {
       display: none;
@@ -236,7 +439,7 @@
     }
 
     .navbar {
-      background: #69e153;
+      background: linear-gradient(135deg, #34A853, #1DA1F2);
       display: flex;
       justify-content: center;
       gap: 40px;
@@ -247,39 +450,49 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       position: sticky;
-      top: 88px;
+      top: 99px;
       z-index: 997;
     }
 
     .navbar a {
-      color: black;
+      color: #333;
       position: relative;
-      transition: all 0.3s ease;
+      padding: 8px 12px;
+      font-weight: 500;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
-
+    
     .navbar a::after {
       content: "";
       position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
       width: 0%;
       height: 2px;
-      left: 0;
-      bottom: -5px;
-      background-color: white;
+      background-color: linear-gradient(135deg, #34A853, #1DA1F2); 
+      border-radius: 10px;
       transition: width 0.3s ease;
     }
-
+    
     .navbar a:hover {
-      color: white;
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #0b188f, #159603);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      transform: translateY(-2px) scale(1.05);
     }
-
+    
     .navbar a:hover::after {
       width: 100%;
     }
-
+    
     .mobile-header {
       display: none;
     }
+    
 
     /* Shrinking header effect */
     .header.shrink,
@@ -364,7 +577,7 @@
         display: flex;
       }
     }
-
+    
 
     .intro-section {
         height: 100vh;
@@ -441,6 +654,8 @@
             font-size: 1em;
         }
     }
+
+    /* feature style */
     
     .featured-products {
         text-align: center;
@@ -565,35 +780,115 @@
             font-weight: bold;
             color: #333;
           }
-      
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
-    margin: 0;
+
+          /* Special Offers style*/
+  .special-offers-container {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background: linear-gradient(#f5f5f5, #e2e2e2);
+        padding-top: 10%;
+        padding-bottom: 10%;
   }
 
-  section#testimonials {
-    background: #f9f9f9;
-    padding: 60px 15px;
-  }
-
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .testimonials .h2 {
+  /* Section title */
+  .special-offers-container h2 {
     text-align: center;
+    color: #050505;
+    margin-bottom: 10%;
+    font-size: 2rem;
+  }
+
+  /* Swiper */
+  .special-offers-container .swiper {
+    max-width: 1000px;
+    padding-bottom: 40px;
+  }
+
+  .special-offers-container .swiper-slide {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeZoom 0.6s ease forwards;
+  }
+
+  @keyframes fadeZoom {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Offer image */
+  .special-offers-container .offer-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  /* Offer title */
+  .special-offers-container .offer-title {
+    font-weight: bold;
     color: #009688;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* Offer description */
+  .special-offers-container .offer-description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  /* Offer CTA button */
+  .special-offers-container .offer-cta {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #009688;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .special-offers-container .offer-cta:hover {
+    background-color: #00796b;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #009688;
+  }
+
+      /*testimonial style */
+  .testimonials-container{
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background: linear-gradient(#f5f5f5, #e2e2e2);
+        padding-top: 10%;
+        padding-bottom: 10%;
+  }
+
+  .testimonials-container h2 {
+    text-align: center;
+    color: #161616;
+    margin-bottom: 10%;
     font-size: 2rem;
   }
 
   .swiper {
     max-width: 1000px;
     padding-bottom: 40px;
-    margin: 0 auto;
   }
 
   .swiper-slide {
@@ -647,6 +942,7 @@
     background: #009688;
   }
 
+/* footer style*/
     .footer {
         background-color: #15171a;
         color: #e0e1dd;

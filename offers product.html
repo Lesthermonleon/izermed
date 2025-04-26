@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IzerMed Special Offers & Promotions</title>
+
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Container for Special Offers */
+    .special-offers-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 15px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* Section title */
+    .special-offers-container h2 {
+      text-align: center;
+      color: #009688;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    /* Swiper */
+    .special-offers-container .swiper {
+      max-width: 1000px;
+      padding-bottom: 40px;
+    }
+
+    .special-offers-container .swiper-slide {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 0.6s ease forwards;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Offer image */
+    .special-offers-container .offer-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* Offer title */
+    .special-offers-container .offer-title {
+      font-weight: bold;
+      color: #009688;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Offer description */
+    .special-offers-container .offer-description {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Offer CTA button */
+    .special-offers-container .offer-cta {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #009688;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .special-offers-container .offer-cta:hover {
+      background-color: #00796b;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #009688;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Special Offers Section -->
+<div class="special-offers-container">
+  <h2>Special Offers & Promotions</h2>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Repeat these cards for each offer -->
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/400x250/009688/ffffff?text=Offer+1" class="offer-img" />
+        <div class="offer-title">Summer Wellness Sale</div>
+        <div class="offer-description">Get 20% off on all wellness products. Don't miss out on this limited-time offer!</div>
+        <a href="#" class="offer-cta">Shop Now</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/400x250/009688/ffffff?text=Offer+2" class="offer-img" />
+        <div class="offer-title">Buy One, Get One Free</div>
+        <div class="offer-description">Buy any two vitamins and get the second one free. Perfect for your health journey!</div>
+        <a href="#" class="offer-cta">Grab the Deal</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/400x250/009688/ffffff?text=Offer+3" class="offer-img" />
+        <div class="offer-title">Exclusive Discount for New Customers</div>
+        <div class="offer-description">Enjoy 15% off your first order when you sign up for IzerMed Pharmacy!</div>
+        <a href="#" class="offer-cta">Sign Up Now</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/400x250/009688/ffffff?text=Offer+4" class="offer-img" />
+        <div class="offer-title">Free Delivery on Orders Over ₱1000</div>
+        <div class="offer-description">Order today and get free delivery on purchases worth ₱1000 or more!</div>
+        <a href="#" class="offer-cta">Order Now</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/400x250/009688/ffffff?text=Offer+5" class="offer-img" />
+        <div class="offer-title">Exclusive Loyalty Program</div>
+        <div class="offer-description">Earn points with every purchase and unlock amazing rewards!</div>
+        <a href="#" class="offer-cta">Join the Program</a>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<!-- SwiperJS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

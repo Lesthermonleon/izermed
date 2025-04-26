@@ -1,226 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-PH">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IzerMed Testimonials</title>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-    }
-
-    section#testimonials {
-      background: #f9f9f9;
-      padding: 60px 15px;
-    }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    h2 {
-      text-align: center;
-      color: #009688;
-      margin-bottom: 40px;
-      font-size: 2rem;
-    }
-
-    .swiper {
-      max-width: 1000px;
-      padding-bottom: 40px;
-      margin: 0 auto;
-    }
-
-    .swiper-slide {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      opacity: 0;
-      transform: scale(0.95);
-      animation: fadeZoom 0.6s ease forwards;
-    }
-
-    @keyframes fadeZoom {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .profile-img {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #009688;
-    }
-
-    .name {
-      font-weight: bold;
-      color: #009688;
-      margin-bottom: 5px;
-      font-size: 1rem;
-    }
-
-    .location {
-      font-size: 0.85rem;
-      color: #777;
-      margin-bottom: 15px;
-    }
-
-    .message {
-      font-size: 0.9rem;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #009688;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Your Pharmacy Name</title>
+    <style>
+        :root {
+            --primary-color: #0069cc;
+            --background-color: #ffffff;
+            --background-subdued: #f6f6f6;
+            --border-color: #dfdfdf;
+            --text-color: #000000;
+            --text-subdued: #666666;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 1000px) {
+            .checkout-container {
+                grid-template-columns: 60% 40%;
+            }
+        }
+        
+        .checkout-header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .checkout-main {
+            padding: 20px;
+        }
+        
+        .checkout-sidebar {
+            padding: 20px;
+            background-color: var(--background-subdued);
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-
-<section id="testimonials">
-  <div class="container">
-    <h2>What Our Customers Say</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <!-- Testimonial Slides -->
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" class="profile-img" />
-          <div class="name">Anna Dela Cruz</div>
-          <div class="location">Quezon City</div>
-          <div class="message">IzerMed Pharmacy always has what I need. Fast delivery and friendly staff!</div>
+    <div class="checkout-container">
+        <div class="checkout-main">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+            </div>
+            
+            <!-- Customer Information Section -->
+            <div class="section">
+                <h2 class="section-title">Customer Information</h2>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            
+            <!-- Delivery Information Section -->
+            <div class="section">
+                <h2 class="section-title">Delivery Information</h2>
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="province">Province</label>
+                    <select id="province" name="province" required>
+                        <option value="">Select Province</option>
+                        <!-- Add Philippine provinces here -->
+                        <option value="NCR">National Capital Region (NCR)</option>
+                        <option value="Bulacan">Bulacan</option>
+                        <option value="Laguna">Laguna</option>
+                        <!-- Add more provinces as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+            </div>
+            
+            <!-- Payment Method Section -->
+            <div class="section">
+                <h2 class="section-title">Payment Method</h2>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="cod" checked> 
+                        Cash on Delivery (COD)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="gcash"> 
+                        GCash
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="credit-card"> 
+                        Credit/Debit Card
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn">Complete Order</button>
         </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/44.jpg" class="profile-img" />
-          <div class="name">Mark Velasco</div>
-          <div class="location">Makati City</div>
-          <div class="message">Reliable and affordable. Their online system is smooth and fast!</div>
+        
+        <div class="checkout-sidebar">
+            <div class="section">
+                <h2 class="section-title">Order Summary</h2>
+                
+                <!-- Example order items -->
+                <div class="order-summary-item">
+                    <span>Paracetamol 500mg (10 tablets)</span>
+                    <span>₱50.00</span>
+                </div>
+                <div class="order-summary-item">
+                    <span>Amoxicillin 500mg (10 capsules)</span>
+                    <span>₱120.00</span>
+                </div>
+                <div class="order-summary-item">
+                    <span>Vitamin C 500mg (30 tablets)</span>
+                    <span>₱150.00</span>
+                </div>
+                
+                <div class="order-summary-item">
+                    <span>Subtotal</span>
+                    <span>₱320.00</span>
+                </div>
+                <div class="order-summary-item">
+                    <span>Shipping</span>
+                    <span>₱50.00</span>
+                </div>
+                <div class="order-summary-item total">
+                    <span>Total</span>
+                    <span>₱370.00</span>
+                </div>
+            </div>
+            
+            <!-- Prescription Upload Section -->
+            <div class="section">
+                <h2 class="section-title">Prescription Upload</h2>
+                <p>For prescription medications, please upload your prescription:</p>
+                <div class="form-group">
+                    <input type="file" id="prescription" name="prescription">
+                </div>
+            </div>
         </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/29.jpg" class="profile-img" />
-          <div class="name">Jasmin Reyes</div>
-          <div class="location">Davao City</div>
-          <div class="message">Helpful pharmacists and a wide variety of wellness items.</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/33.jpg" class="profile-img" />
-          <div class="name">Leo Fernandez</div>
-          <div class="location">Pasig City</div>
-          <div class="message">IzerMed delivered my meds within 2 hours. Amazing speed!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/77.jpg" class="profile-img" />
-          <div class="name">Bea Santos</div>
-          <div class="location">Cebu City</div>
-          <div class="message">The care I received at IzerMed was heartfelt. Highly recommended!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/21.jpg" class="profile-img" />
-          <div class="name">Carlos Mendez</div>
-          <div class="location">Taguig</div>
-          <div class="message">Great product availability and knowledgeable staff!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/12.jpg" class="profile-img" />
-          <div class="name">Kyla Dominguez</div>
-          <div class="location">Bacolod</div>
-          <div class="message">Ordering meds online is super easy now. Thanks, IzerMed!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/60.jpg" class="profile-img" />
-          <div class="name">Juan Dizon</div>
-          <div class="location">Baguio City</div>
-          <div class="message">The staff are courteous and knowledgeable. I feel safe buying here.</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/18.jpg" class="profile-img" />
-          <div class="name">Angela Cruz</div>
-          <div class="location">Antipolo</div>
-          <div class="message">Love the wellness product bundles! And the deals are great too.</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/50.jpg" class="profile-img" />
-          <div class="name">Francis Uy</div>
-          <div class="location">Manila</div>
-          <div class="message">My grandma got her medicine with no hassle. Thank you, IzerMed!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/55.jpg" class="profile-img" />
-          <div class="name">Cheska Lim</div>
-          <div class="location">Calamba</div>
-          <div class="message">The loyalty card they offer gives great perks and discounts!</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/men/27.jpg" class="profile-img" />
-          <div class="name">Ramon Bautista</div>
-          <div class="location">Valenzuela</div>
-          <div class="message">IzerMed customer support is excellent. Prompt and helpful always.</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="https://randomuser.me/api/portraits/women/37.jpg" class="profile-img" />
-          <div class="name">Louise Rivera</div>
-          <div class="location">San Fernando</div>
-          <div class="message">Very clean packaging, secure delivery, and easy-to-use app!</div>
-        </div>
-
-      </div>
-      <div class="swiper-pagination"></div>
     </div>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      }
-    }
-  });
-</script>
-
 </body>
 </html>

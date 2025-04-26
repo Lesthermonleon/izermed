@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Izer Med Pharmacy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         /* General Styles */
         body {
@@ -181,30 +183,69 @@
       <div class="header">
         <div class="logo">
           <img src="izerlogo.jpg" alt="Logo">
-          <h2>Izer Med Pharmacy</h2>
+          <h2>IzerMed Pharmacy</h2>
         </div>
-        <div class="search-box">
-          <input type="text" placeholder="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="search-box-wrapper desktop-search">
+            <div class="search-box">
+              <input type="text" id="desktop-search-input" placeholder="Search product...">
+              <i class="fa-solid fa-magnifying-glass" id="desktop-search-btn"></i>
+              <div class="spinner" id="desktop-search-spinner"></div>
+            </div>
+            <div class="search-results" id="desktop-search-results">
+              <!-- Suggestions or popular items will go here -->
+            </div>
         </div>
-      </div>
+        <div class="user" id="user">
+            <div class="dropdown">
+                <a href="#" id="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+        </div> 
+    </div>
     
-    
-      <div class="mobile-header">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
         <div class="mobile-left">
           <img src="izerlogo.jpg" alt="Logo">
-          <h2>Izer Med Pharmacy</h2>
+          <h2>IzerMed</h2>
         </div>
-        <div class="search-box">
-          <input type="text" placeholder="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="search-box-wrapper mobile-search">
+            <div class="search-box">
+              <input type="text" id="mobile-search-input" placeholder="Search product...">
+              <i class="fa-solid fa-magnifying-glass" id="mobile-search-btn"></i>
+              <div class="spinner" id="mobile-search-spinner"></div>
+            </div>
+            <div class="search-results" id="mobile-search-results">
+              <!-- Suggestions or popular items will go here -->
+            </div>
         </div>
+        <div class="user" id="user">
+            <div class="dropdown">
+                <a href="#" id="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+        </div> 
+    
+        <!-- Menu toggle for mobile -->
         <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
           <span></span>
           <span></span>
           <span></span>
         </div>
-      </div>
+    </div>
+    
     
     
       <div class="navbar" id="navbar">
@@ -232,6 +273,7 @@
           </div>
         <a href="contact.html">Contact us</a>
       </div>
+
 
     <!-- Get In Touch Section -->
     <section id="contactt">
@@ -335,26 +377,153 @@
         </div>
       </footer>
       <script>
-        function toggleDropdown(element) {
-          const dropdown = element.parentElement;
-          dropdown.classList.toggle("active");
-      
-          // Close other dropdowns
-          document.querySelectorAll(".dropdown").forEach(el => {
-            if (el !== dropdown) {
-              el.classList.remove("active");
+        // Get elements for both desktop and mobile
+    const desktopSearchInput = document.getElementById('desktop-search-input');
+    const desktopSearchResults = document.getElementById('desktop-search-results');
+    const desktopSearchBtn = document.getElementById('desktop-search-btn');
+    
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    const mobileSearchResults = document.getElementById('mobile-search-results');
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    
+    // Sample products list
+    const products = [
+      "Paracetamol",
+      "Ibuprofen",
+      "Vitamin C",
+      "Cough Syrup",
+      "Antibiotics",
+      "Face Mask",
+      "Alcohol",
+      "Hand Sanitizer",
+      "Thermometer",
+      "Glucose Meter"
+    ];
+    
+    // Function to show search suggestions
+    function showSuggestions(query, resultsContainer) {
+      const filtered = products.filter(product =>
+        product.toLowerCase().includes(query.toLowerCase())
+      );
+    
+      resultsContainer.innerHTML = "";  // Clear previous results
+    
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = "<div>No results found</div>";
+      } else {
+        filtered.forEach(item => {
+          const div = document.createElement("div");
+          div.textContent = item;
+          div.style.cursor = "pointer";
+    
+          // Add click event for selection
+          div.addEventListener("click", () => {
+            if (resultsContainer === desktopSearchResults) {
+              desktopSearchInput.value = item; // Set input to selected item
+            } else {
+              mobileSearchInput.value = item; // Set input to selected item
             }
+            resultsContainer.style.display = "none"; // Hide suggestions
           });
-        }
-      
-        // Close dropdowns when clicking outside
-        window.addEventListener("click", function(e) {
-          if (!e.target.closest(".dropdown")) {
-            document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
-          }
+    
+          resultsContainer.appendChild(div);
         });
+      }
+    
+      // Show the suggestions dropdown
+      resultsContainer.style.display = "block";
+    }
+    
+    // Handle input and trigger suggestions
+    function handleInput(inputElement, resultsContainer) {
+      const query = inputElement.value.trim();
+      if (query.length > 0) {
+        showSuggestions(query, resultsContainer);  // Show suggestions if input is non-empty
+      } else {
+        resultsContainer.style.display = "none";  // Hide suggestions if input is empty
+      }
+    }
+    
+    // Event listener for input (live search)
+    desktopSearchInput.addEventListener("input", () => handleInput(desktopSearchInput, desktopSearchResults));
+    mobileSearchInput.addEventListener("input", () => handleInput(mobileSearchInput, mobileSearchResults));
+    
+    // Event listener for search button click
+    desktopSearchBtn.addEventListener("click", () => handleInput(desktopSearchInput, desktopSearchResults));
+    mobileSearchBtn.addEventListener("click", () => handleInput(mobileSearchInput, mobileSearchResults));
+    
+    // Close suggestions when clicking outside (mobile + desktop)
+    document.addEventListener("click", function (e) {
+      const isClickInside = e.target.closest(".search-box-wrapper");
+      if (!isClickInside) {
+        desktopSearchResults.style.display = "none"; // Hide results if click is outside desktop search box
+        mobileSearchResults.style.display = "none"; // Hide results if click is outside mobile search box
+      }
+    });
+    
+    // Optional: For mobile (touch devices)
+    document.addEventListener("touchstart", function (e) {
+      const isTouchInside = e.target.closest(".search-box-wrapper");
+      if (!isTouchInside) {
+        desktopSearchResults.style.display = "none"; // Hide results on touch if click is outside desktop search box
+        mobileSearchResults.style.display = "none"; // Hide results on touch if click is outside mobile search box
+      }
+    });
+    
+    // Debug: Log when input is being handled
+    desktopSearchInput.addEventListener("input", function () {
+      console.log("Desktop Input value:", desktopSearchInput.value);  // Log the input value to debug
+    });
+    
+    mobileSearchInput.addEventListener("input", function () {
+      console.log("Mobile Input value:", mobileSearchInput.value);  // Log the input value to debug
+    });
+    
+      </script>
+    
+      <script>
+        function toggleDropdown(element) {
+      const dropdown = element.closest('.dropdown');  
+      dropdown.classList.toggle("active");
+    
+      
+      document.querySelectorAll(".dropdown").forEach(el => {
+        if (el !== dropdown) {
+          el.classList.remove("active");
+        }
+      });
+    }
+    
+    
+    window.addEventListener("click", function(e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
+      }
+    });
+    
       </script>
       
+      <script>
+        const userIcon = document.getElementById('user-icon');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Toggle dropdown visibility on user icon click
+    userIcon.addEventListener('click', function (e) {
+      e.preventDefault();  // Prevent default behavior (like linking)
+      dropdownMenu.classList.toggle('show');  // Toggle the dropdown visibility
+    });
+    
+    // Close the dropdown if clicked outside
+    document.addEventListener('click', function (e) {
+      if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove('show');  // Close the dropdown if clicked outside
+      }
+    });
+    
+      </script>
+      
+      
+    
       <script>
         function toggleMenu() {
           const navbar = document.getElementById('navbar');
@@ -362,19 +531,6 @@
           navbar.classList.toggle('show');
           menuToggle.classList.toggle('open');
         }
-    
-        window.addEventListener("scroll", function () {
-          const header = document.querySelector(".header");
-          const mobileHeader = document.querySelector(".mobile-header");
-    
-          if (window.scrollY > 20) {
-            if (header) header.classList.add("shrink");
-            if (mobileHeader) mobileHeader.classList.add("shrink");
-          } else {
-            if (header) header.classList.remove("shrink");
-            if (mobileHeader) mobileHeader.classList.remove("shrink");
-          }
-        });
-      </script>
+    </script>
 </body>
 </html>
