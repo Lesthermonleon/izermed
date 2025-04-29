@@ -30,24 +30,15 @@
       <img src="izerlogo.jpg" alt="Logo">
       <h2>IzerMed Pharmacy</h2>
     </div>
-    <div class="search-box-wrapper desktop-search">
-        <div class="search-box">
-          <input type="text" id="desktop-search-input" placeholder="Search product...">
-          <i class="fa-solid fa-magnifying-glass" id="desktop-search-btn"></i>
-          <div class="spinner" id="desktop-search-spinner"></div>
-        </div>
-        <div class="search-results" id="desktop-search-results">
-          <!-- Suggestions or popular items will go here -->
-        </div>
-    </div>
+    
     <div class="user" id="user">
         <div class="dropdown">
             <a href="#" id="user-icon">
                 <i class="fa-regular fa-user"></i>
             </a>
             <div class="dropdown-menu">
-                <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
-                <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
             </div>
         </div>
         <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
@@ -58,26 +49,17 @@
 <div class="mobile-header">
     <div class="mobile-left">
       <img src="izerlogo.jpg" alt="Logo">
-      <h2>IzerMed</h2>
+      <h2>IzerMed Pharmacy</h2>
     </div>
-    <div class="search-box-wrapper mobile-search">
-        <div class="search-box">
-          <input type="text" id="mobile-search-input" placeholder="Search product...">
-          <i class="fa-solid fa-magnifying-glass" id="mobile-search-btn"></i>
-          <div class="spinner" id="mobile-search-spinner"></div>
-        </div>
-        <div class="search-results" id="mobile-search-results">
-          <!-- Suggestions or popular items will go here -->
-        </div>
-    </div>
+    
     <div class="user" id="user">
         <div class="dropdown">
             <a href="#" id="user-icon">
                 <i class="fa-regular fa-user"></i>
             </a>
             <div class="dropdown-menu">
-                <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
-                <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
             </div>
         </div>
         <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
@@ -97,16 +79,15 @@
     <a href="index.html">Home</a>
     <a href="about.html">About us</a>
     <div class="dropdown">
-        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Medicine <i class="fa-solid fa-caret-down"></i></a>
-        <div class="dropdown-content">
-          <a href="#">Prescription</a>
-          <a href="#">Over-the-Counter</a>
-          <a href="#">Vitamins & Supplements</a>
-        </div>
+      <a href="javascript:void(0)" onclick="toggleDropdown(this)">Store Services <i class="fa-solid fa-caret-down"></i></a>
+      <div class="dropdown-content">
+          <a href="#">Order Online</a>
+          <a href="drug.html">Drug Information</a>
       </div>
+    </div>
       
       <div class="dropdown">
-        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Categories <i class="fa-solid fa-caret-down"></i></a>
+        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Our Products <i class="fa-solid fa-caret-down"></i></a>
         <div class="dropdown-content">
             <a href="#">Prescription Medications</a>
             <a href="#">Over-the-counter Medications</a>
@@ -126,6 +107,22 @@
       <p>Izermed Pharmacy offers high-quality generic and branded medicines, ensuring safe, effective, and reliable healthcare for all.</p>
     </div>
   </section>
+
+  <!-- Store Advisory -->
+<div class="store-advisory-container">
+  <div class="store-advisory">
+    <h2>📢 Store Advisory</h2>
+    <p>
+      Online ordering is available for customers <strong>near our store</strong> (within 5km).
+      <br><br>
+      You can also choose <strong>"Pick Up Later"</strong> during checkout and select your preferred pickup time.
+      <br><br>
+      Thank you for your support! 💚
+    </p>
+  </div>
+</div>
+
+
   <section class="featured-products">
     <h2>Featured Products of the Month</h2>
 </div>
@@ -281,108 +278,7 @@
     </div>
   </div>
 
-    <div class="testimonials-container">
-      <h2>What Our Customers Say</h2>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-  
-          <!-- Testimonial Slides -->
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="profile-img" />
-            <div class="name">Anna Dela Cruz</div>
-            <div class="location">Quezon City</div>
-            <div class="message">IzerMed Pharmacy always has what I need. Fast delivery and friendly staff!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/44.jpg" class="profile-img" />
-            <div class="name">Mark Velasco</div>
-            <div class="location">Makati City</div>
-            <div class="message">Reliable and affordable. Their online system is smooth and fast!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/29.jpg" class="profile-img" />
-            <div class="name">Jasmin Reyes</div>
-            <div class="location">Davao City</div>
-            <div class="message">Helpful pharmacists and a wide variety of wellness items.</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="profile-img" />
-            <div class="name">Leo Fernandez</div>
-            <div class="location">Pasig City</div>
-            <div class="message">IzerMed delivered my meds within 2 hours. Amazing speed!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/77.jpg" class="profile-img" />
-            <div class="name">Bea Santos</div>
-            <div class="location">Cebu City</div>
-            <div class="message">The care I received at IzerMed was heartfelt. Highly recommended!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/21.jpg" class="profile-img" />
-            <div class="name">Carlos Mendez</div>
-            <div class="location">Taguig</div>
-            <div class="message">Great product availability and knowledgeable staff!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/12.jpg" class="profile-img" />
-            <div class="name">Kyla Dominguez</div>
-            <div class="location">Bacolod</div>
-            <div class="message">Ordering meds online is super easy now. Thanks, IzerMed!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/60.jpg" class="profile-img" />
-            <div class="name">Juan Dizon</div>
-            <div class="location">Baguio City</div>
-            <div class="message">The staff are courteous and knowledgeable. I feel safe buying here.</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/18.jpg" class="profile-img" />
-            <div class="name">Angela Cruz</div>
-            <div class="location">Antipolo</div>
-            <div class="message">Love the wellness product bundles! And the deals are great too.</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/50.jpg" class="profile-img" />
-            <div class="name">Francis Uy</div>
-            <div class="location">Manila</div>
-            <div class="message">My grandma got her medicine with no hassle. Thank you, IzerMed!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/55.jpg" class="profile-img" />
-            <div class="name">Cheska Lim</div>
-            <div class="location">Calamba</div>
-            <div class="message">The loyalty card they offer gives great perks and discounts!</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/men/27.jpg" class="profile-img" />
-            <div class="name">Ramon Bautista</div>
-            <div class="location">Valenzuela</div>
-            <div class="message">IzerMed customer support is excellent. Prompt and helpful always.</div>
-          </div>
-  
-          <div class="swiper-slide">
-            <img src="https://randomuser.me/api/portraits/women/37.jpg" class="profile-img" />
-            <div class="name">Louise Rivera</div>
-            <div class="location">San Fernando</div>
-            <div class="message">Very clean packaging, secure delivery, and easy-to-use app!</div>
-          </div>
-  
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
+    
   
   <footer class="footer">
     <div class="footer-container">
@@ -415,10 +311,10 @@
       </div>
   
       <div class="footer-section">
-        <h3>About Izermed</h3>
-        <p>
-          At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.
-        </p>
+        <h3>Get Help</h3>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="#">Refund Policy</a></p>
+        <p><a href="#">Terms and Service</a></p>
         <div class="social-iconss">
           <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
@@ -438,112 +334,6 @@
       <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
     </div>
   </footer>
-  
-  
-  <script>
-    // Get elements for both desktop and mobile
-const desktopSearchInput = document.getElementById('desktop-search-input');
-const desktopSearchResults = document.getElementById('desktop-search-results');
-const desktopSearchBtn = document.getElementById('desktop-search-btn');
-
-const mobileSearchInput = document.getElementById('mobile-search-input');
-const mobileSearchResults = document.getElementById('mobile-search-results');
-const mobileSearchBtn = document.getElementById('mobile-search-btn');
-
-// Sample products list
-const products = [
-  "Paracetamol",
-  "Ibuprofen",
-  "Vitamin C",
-  "Cough Syrup",
-  "Antibiotics",
-  "Face Mask",
-  "Alcohol",
-  "Hand Sanitizer",
-  "Thermometer",
-  "Glucose Meter"
-];
-
-// Function to show search suggestions
-function showSuggestions(query, resultsContainer) {
-  const filtered = products.filter(product =>
-    product.toLowerCase().includes(query.toLowerCase())
-  );
-
-  resultsContainer.innerHTML = "";  // Clear previous results
-
-  if (filtered.length === 0) {
-    resultsContainer.innerHTML = "<div>No results found</div>";
-  } else {
-    filtered.forEach(item => {
-      const div = document.createElement("div");
-      div.textContent = item;
-      div.style.cursor = "pointer";
-
-      // Add click event for selection
-      div.addEventListener("click", () => {
-        if (resultsContainer === desktopSearchResults) {
-          desktopSearchInput.value = item; // Set input to selected item
-        } else {
-          mobileSearchInput.value = item; // Set input to selected item
-        }
-        resultsContainer.style.display = "none"; // Hide suggestions
-      });
-
-      resultsContainer.appendChild(div);
-    });
-  }
-
-  // Show the suggestions dropdown
-  resultsContainer.style.display = "block";
-}
-
-// Handle input and trigger suggestions
-function handleInput(inputElement, resultsContainer) {
-  const query = inputElement.value.trim();
-  if (query.length > 0) {
-    showSuggestions(query, resultsContainer);  // Show suggestions if input is non-empty
-  } else {
-    resultsContainer.style.display = "none";  // Hide suggestions if input is empty
-  }
-}
-
-// Event listener for input (live search)
-desktopSearchInput.addEventListener("input", () => handleInput(desktopSearchInput, desktopSearchResults));
-mobileSearchInput.addEventListener("input", () => handleInput(mobileSearchInput, mobileSearchResults));
-
-// Event listener for search button click
-desktopSearchBtn.addEventListener("click", () => handleInput(desktopSearchInput, desktopSearchResults));
-mobileSearchBtn.addEventListener("click", () => handleInput(mobileSearchInput, mobileSearchResults));
-
-// Close suggestions when clicking outside (mobile + desktop)
-document.addEventListener("click", function (e) {
-  const isClickInside = e.target.closest(".search-box-wrapper");
-  if (!isClickInside) {
-    desktopSearchResults.style.display = "none"; // Hide results if click is outside desktop search box
-    mobileSearchResults.style.display = "none"; // Hide results if click is outside mobile search box
-  }
-});
-
-// Optional: For mobile (touch devices)
-document.addEventListener("touchstart", function (e) {
-  const isTouchInside = e.target.closest(".search-box-wrapper");
-  if (!isTouchInside) {
-    desktopSearchResults.style.display = "none"; // Hide results on touch if click is outside desktop search box
-    mobileSearchResults.style.display = "none"; // Hide results on touch if click is outside mobile search box
-  }
-});
-
-// Debug: Log when input is being handled
-desktopSearchInput.addEventListener("input", function () {
-  console.log("Desktop Input value:", desktopSearchInput.value);  // Log the input value to debug
-});
-
-mobileSearchInput.addEventListener("input", function () {
-  console.log("Mobile Input value:", mobileSearchInput.value);  // Log the input value to debug
-});
-
-  </script>
 
   <script>
     function toggleDropdown(element) {
@@ -586,8 +376,6 @@ document.addEventListener('click', function (e) {
 
   </script>
   
-  
-
   <script>
     function toggleMenu() {
       const navbar = document.getElementById('navbar');

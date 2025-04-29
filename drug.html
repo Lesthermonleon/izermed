@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Izer Med Pharmacy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    /* Scoped CSS using unique ID for total isolation */
+    #drug-info-wrapper * {
+      box-sizing: border-box;
+    }
+
+    #drug-info-wrapper {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    #drug-info-wrapper .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    #drug-info-wrapper .header {
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    #drug-info-wrapper .breadcrumb {
+      margin: 20px;
+      font-size: 20px;
+    }
+
+    #drug-info-wrapper .breadcrumb a {
+      color: #1DA1F2;
+      text-decoration: none;
+    }
+
+    #drug-info-wrapper .breadcrumb span {
+      color: #34A853;
+    }
+
+    #drug-info-wrapper .warning-box {
+      background: #fff;
+      border: 2px solid #34A853;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    #drug-info-wrapper .warning-box i {
+      color: #34A853;
+      font-size: 24px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    #drug-info-wrapper .search-section {
+      margin: 20px;
+    }
+
+    #drug-info-wrapper .search-section h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    #drug-info-wrapper .search-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    #drug-info-wrapper select,
+    #drug-info-wrapper input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #drug-info-wrapper button {
+      background: #1DA1F2;
+      border: none;
+      padding: 6px 16px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      height: 40px;
+      margin-left: 4px;
+    }
+
+    #drug-info-wrapper button:hover {
+      background: #34A853;
+    }
+
+    #drug-info-wrapper .medicine-info {
+      margin: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      border: 2px dashed #ccc;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+    }
+
+    #drug-info-wrapper .suggestion-item {
+      padding: 10px;
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s;
+    }
+
+    #drug-info-wrapper .suggestion-item:hover {
+      background: #f0f0f0;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      #drug-info-wrapper .search-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+      }
+
+      #drug-info-wrapper select {
+        flex: 0 0 100%;
+        padding: 12px;
+      }
+
+      #drug-info-wrapper input[type="text"] {
+        flex: 1 1 60%;
+        padding: 12px;
+      }
+
+      #drug-info-wrapper button {
+        flex: 0 0 10%;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #drug-info-wrapper .search-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      #drug-info-wrapper select {
+        flex: 0 0 35%;
+        font-size: 14px;
+      }
+
+      #drug-info-wrapper input[type="text"] {
+        flex: 1 1 45%;
+        font-size: 14px;
+      }
+
+      #drug-info-wrapper button {
+        flex: 0 0 20%;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1AjAem9qd2/?mibextid=wwXIfr" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="contact-info">
+            <a href="https://www.google.com/maps?q=14.6921769,121.0829287"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="tel:+639123456789"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:izermed@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    
+    
+      <div class="header">
+        <div class="logo">
+          <img src="izerlogo.jpg" alt="Logo">
+          <h2>IzerMed Pharmacy</h2>
+        </div>
+        
+        <div class="user" id="user">
+            <div class="dropdown">
+                <a href="#" id="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+        </div> 
+    </div>
+    
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="mobile-left">
+          <img src="izerlogo.jpg" alt="Logo">
+          <h2>IzerMed Pharmacy</h2>
+        </div>
+        
+        <div class="user" id="user">
+            <div class="dropdown">
+                <a href="#" id="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="section.html"><i class="fa-solid fa-user"></i> Create Account</a>
+                </div>
+            </div>
+            <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+        </div> 
+    
+        <!-- Menu toggle for mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    </div>
+    
+    
+    
+      <div class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <div class="dropdown">
+          <a href="javascript:void(0)" onclick="toggleDropdown(this)">Store Services <i class="fa-solid fa-caret-down"></i></a>
+          <div class="dropdown-content">
+              <a href="#">Order Online</a>
+              <a href="drug.html">Drug Information</a>
+          </div>
+        </div>
+          
+          <div class="dropdown">
+            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Our Products <i class="fa-solid fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Prescription Medications</a>
+                <a href="#">Over-the-counter Medications</a>
+                <a href="#">Vitamins & Supplements</a>
+                <a href="#">Personal Care</a>
+                <a href="#">Health Devices</a>
+                <a href="#">Baby Care</a>
+            </div>
+          </div>
+        <a href="contact.html">Contact us</a>
+      </div>
+
+
+  <div id="drug-info-wrapper">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <section class="breadcrumb">
+        <span>Drug Information</span>
+      </section>
+
+      <!-- Warning Message -->
+      <section class="warning-box">
+        <p><i class="fa-solid fa-circle-exclamation"></i> 
+          Search for drug information here to know the available forms; understand your medications better: its use, how to take it, precautions, side effects, and handling instructions.
+        </p>
+        <p>The pharmacy information service contains basic drug info and is not a substitute for professional medical care. Always consult your doctor.</p>
+      </section>
+
+      <!-- Search -->
+      <section class="search-section">
+        <h2>How do you want to search for drug information?</h2>
+        <div class="search-bar">
+          <select>
+            <option>By Generic Name</option>
+            <option>By Brand Name</option>
+          </select>
+          <input type="text" placeholder="Search Medicine">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="medicine-info" id="suggestionBox">NO MEDICINE SELECTED</section>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">› Home</a></li>
+          <li><a href="#">› Medicines</a></li>
+          <li><a href="#">› Categories</a></li>
+          <li><a href="about.html">› About Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>
+          <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" rel="noopener" aria-label="Google Maps Location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>75 San Isidro St,<br>Quezon City, Metro Manila</span>
+          </a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+639912335876"> +63 991 2335 876</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a>
+        </p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Get Help</h3>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="#">Refund Policy</a></p>
+        <p><a href="#">Terms and Service</a></p>
+        <div class="social-iconss">
+          <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/this_user_does_not_exist_123" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/fake_account_not_found_456" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 IzerMed. All rights reserved.</p>
+      <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDropdown(element) {
+  const dropdown = element.closest('.dropdown');  
+  dropdown.classList.toggle("active");
+
+  
+  document.querySelectorAll(".dropdown").forEach(el => {
+    if (el !== dropdown) {
+      el.classList.remove("active");
+    }
+  });
+}
+
+
+window.addEventListener("click", function(e) {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
+  }
+});
+
+  </script>
+  
+  <script>
+    const userIcon = document.getElementById('user-icon');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Toggle dropdown visibility on user icon click
+userIcon.addEventListener('click', function (e) {
+  e.preventDefault();  // Prevent default behavior (like linking)
+  dropdownMenu.classList.toggle('show');  // Toggle the dropdown visibility
+});
+
+// Close the dropdown if clicked outside
+document.addEventListener('click', function (e) {
+  if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.classList.remove('show');  // Close the dropdown if clicked outside
+  }
+});
+
+  </script>
+  
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      navbar.classList.toggle('show');
+      menuToggle.classList.toggle('open');
+    }
+</script>
+
+
+
+  <script>
+    const medicines = {
+      "Biogesic": {
+        brand: "Biogesic",
+        generic: "Paracetamol",
+        dosage: "500 mg",
+        description: "Used for relief of minor aches, pains & fever reduction.",
+        howToTake: "Take 1 tablet every 4–6 hours as needed. Do not exceed 4g per day.",
+        info: "Biogesic is used and trusted for headache and fever relief. It can be consumed on an empty stomach, and can be taken by pregnant women, breastfeeding moms and the elderly."
+      },
+      "Amoxicillin": {
+        brand: "Amoxicillin",
+        generic: "Amoxicillin",
+        dosage: "250 mg",
+        description: "Used to treat bacterial infections such as pneumonia, bronchitis, and infections of the ear, nose, throat, or urinary tract.",
+        howToTake: "Take 1 capsule every 8 hours. Complete the full course even if you feel better.",
+        info: "Amoxicillin is a penicillin-type antibiotic that helps stop the growth of bacteria."
+      },
+      "Paracetamol": {
+        brand: "Generic Paracetamol",
+        generic: "Paracetamol",
+        dosage: "500 mg",
+        description: "Used to treat mild to moderate pain and reduce fever.",
+        howToTake: "Take 1 tablet every 4–6 hours as needed. Do not exceed 8 tablets in 24 hours.",
+        info: "Paracetamol is a common pain reliever and fever reducer, often used for headaches, muscle aches, arthritis, backaches, toothaches, colds, and fevers."
+      }
+    };
+
+    const searchInput = document.querySelector('input[type="text"]');
+    const suggestionBox = document.getElementById('suggestionBox');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      suggestionBox.innerHTML = "";
+
+      if (query === "") {
+        suggestionBox.textContent = "NO MEDICINE SELECTED";
+        return;
+      }
+
+      const filtered = Object.keys(medicines).filter(med => med.toLowerCase().includes(query));
+
+      if (filtered.length === 0) {
+        suggestionBox.innerHTML = "<div>No matches found.</div>";
+      } else {
+        filtered.forEach(med => {
+          const item = document.createElement("div");
+          item.textContent = med;
+          item.className = "suggestion-item";
+
+          item.addEventListener("click", () => {
+            const data = medicines[med];
+            searchInput.value = med;
+            suggestionBox.innerHTML = `
+              <div style="font-size: 16px; line-height: 1.6;">
+                <strong>About the Product</strong><br>${data.info}<br><br>
+                <strong>Generic Name:</strong> ${data.generic}<br>
+                <strong>Dosage:</strong> ${data.dosage}<br>
+                <strong>Purpose:</strong> ${data.description}<br>
+                <strong>How to Take:</strong> ${data.howToTake}
+              </div>
+            `;
+          });
+
+          suggestionBox.appendChild(item);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

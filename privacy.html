@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Scoped General Styles for Privacy Policy */
+    #privacy-policy {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    #privacy-policy .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #privacy-policy h2 {
+      text-align: center;
+      color: #34A853;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #privacy-policy h3 {
+      color: #1DA1F2;
+      font-size: 22px;
+      margin-top: 20px;
+    }
+
+    #privacy-policy p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    #privacy-policy ul {
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    #privacy-policy ul li {
+      list-style-type: disc;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      #privacy-policy .container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      #privacy-policy h2 {
+        font-size: 26px;
+      }
+
+      #privacy-policy h3 {
+        font-size: 20px;
+      }
+
+      #privacy-policy p {
+        font-size: 14px;
+      }
+    }
+
+    /* For extra large screens (larger than 1200px) */
+    @media (min-width: 1200px) {
+      #privacy-policy .container {
+        max-width: 1000px;
+      }
+
+      #privacy-policy h2 {
+        font-size: 36px;
+      }
+
+      #privacy-policy h3 {
+        font-size: 24px;
+      }
+
+      #privacy-policy p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1AjAem9qd2/?mibextid=wwXIfr" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/fake_account_not_found_456" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/this_user_does_not_exist_123" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+    <div class="contact-info">
+        <a href="https://www.google.com/maps?q=14.6921769,121.0829287"><i class="fa-solid fa-location-dot"></i></a>
+        <a href="tel:+639123456789"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:izermed@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+
+  <div class="header">
+    <div class="logo">
+      <img src="izerlogo.jpg" alt="Logo">
+      <h2>IzerMed Pharmacy</h2>
+    </div>
+    <div class="user" id="user">
+        <div class="dropdown">
+            <a href="#" id="user-icon">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <div class="dropdown-menu">
+                <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
+            </div>
+        </div>
+        <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+    </div> 
+</div>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+    <div class="mobile-left">
+      <img src="izerlogo.jpg" alt="Logo">
+      <h2>IzerMed</h2>
+    </div>
+    <div class="user" id="user">
+        <div class="dropdown">
+            <a href="#" id="user-icon">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <div class="dropdown-menu">
+                <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
+            </div>
+        </div>
+        <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+    </div> 
+
+    <!-- Menu toggle for mobile -->
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</div>
+
+
+
+  <div class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About us</a>
+    <a href="drug.html">Drug Information</a>
+      
+      <div class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleDropdown(this)">Categories <i class="fa-solid fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Prescription Medications</a>
+            <a href="#">Over-the-counter Medications</a>
+            <a href="#">Vitamins & Supplements</a>
+            <a href="#">Personal Care</a>
+            <a href="#">Health Devices</a>
+            <a href="#">Baby Care</a>
+        </div>
+      </div>
+    <a href="contact.html">Contact us</a>
+  </div>
+  <div id="privacy-policy">
+    <div class="container">
+      <h2>Privacy Policy</h2>
+      <p><strong>Effective Date:</strong> April 26, 2025</p>
+
+      <p>
+        At <strong>IzerMed Pharmacy</strong>, we prioritize your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website and services. By accessing our website, you agree to the practices described in this policy.
+      </p>
+
+      <h3>Information We Collect</h3>
+      <p>
+        We collect information in the following ways:
+      </p>
+      <ul>
+        <li><strong>Personal Information:</strong> When you place an order, we collect your name, email address, phone number, and delivery address to process your transaction.</li>
+        <li><strong>Payment Information:</strong> We use third-party payment processors for transactions, so we do not store your credit or debit card information directly.</li>
+        <li><strong>Non-personal Information:</strong> We collect information about your device, browser type, and IP address for website analytics and improvements.</li>
+        <li><strong>Cookies and Tracking Technologies:</strong> We use cookies to enhance your browsing experience and provide personalized content. You can control cookie settings through your browser.</li>
+      </ul>
+
+      <h3>How We Use Your Information</h3>
+      <p>
+        The information we collect is used for the following purposes:
+      </p>
+      <ul>
+        <li>To process and fulfill your orders efficiently and accurately.</li>
+        <li>To communicate with you regarding order status, promotions, and new services.</li>
+        <li>To improve the functionality and user experience of our website.</li>
+        <li>To send you marketing communications, if you have opted-in to receive them. You can opt-out at any time.</li>
+        <li>To prevent fraud and ensure the security of our services.</li>
+      </ul>
+
+      <h3>Data Protection</h3>
+      <p>
+        We take the security of your personal information seriously. We implement industry-standard security measures to protect your data, including encryption, secure servers, and access control mechanisms. While we strive to protect your data, please note that no method of transmission over the internet or electronic storage is 100% secure.
+      </p>
+
+      <h3>Sharing Your Information</h3>
+      <p>
+        We do not sell or rent your personal information to third parties. However, we may share your information with trusted third-party service providers to assist with processing orders and maintaining the website, including payment processors and delivery companies. These third parties are obligated to keep your information confidential and are not permitted to use it for any other purposes.
+      </p>
+
+      <h3>Your Privacy Rights</h3>
+      <p>
+        You have the following rights regarding your personal information:
+      </p>
+      <ul>
+        <li><strong>Access:</strong> You can request to view the personal data we have stored about you.</li>
+        <li><strong>Correction:</strong> You can request to update or correct any incorrect information.</li>
+        <li><strong>Deletion:</strong> You can request the deletion of your personal information, subject to legal obligations or contractual obligations.</li>
+        <li><strong>Opt-out:</strong> You can opt-out of receiving promotional emails by using the unsubscribe link in our communications.</li>
+      </ul>
+
+      <h3>Cookies and Tracking Technologies</h3>
+      <p>
+        We use cookies and similar tracking technologies to collect information about your interactions with our website. These technologies help us personalize your experience and analyze usage patterns. You can disable cookies through your browser settings, but this may affect the functionality of the website.
+      </p>
+
+      <h3>Children's Privacy</h3>
+      <p>
+        Our website and services are not intended for use by children under the age of 13. We do not knowingly collect or solicit personal information from children. If we learn that we have collected personal data from a child under 13, we will take steps to delete that information as soon as possible.
+      </p>
+
+      <h3>Changes to This Policy</h3>
+      <p>
+        We may update this Privacy Policy periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be posted on this page with the revised "Effective Date" at the top. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
+      </p>
+
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">› Home</a></li>
+          <li><a href="#">› Medicines</a></li>
+          <li><a href="#">› Categories</a></li>
+          <li><a href="about.html">› About Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>
+          <a href="https://www.google.com/maps?q=14.6921769,121.0829287" target="_blank" rel="noopener" aria-label="Google Maps Location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>75 San Isidro St,<br>Quezon City, Metro Manila</span>
+          </a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+639912335876"> +63 991 2335 876</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:izermed@gmail.com"> izermed@gmail.com</a>
+        </p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Get Help</h3>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="#">Refund Policy</a></p>
+        <p><a href="#">Terms and Service</a></p>
+        <div class="social-iconss">
+          <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/this_user_does_not_exist_123" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/fake_account_not_found_456" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 IzerMed. All rights reserved.</p>
+      <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDropdown(element) {
+  const dropdown = element.closest('.dropdown');  
+  dropdown.classList.toggle("active");
+
+  
+  document.querySelectorAll(".dropdown").forEach(el => {
+    if (el !== dropdown) {
+      el.classList.remove("active");
+    }
+  });
+}
+
+
+window.addEventListener("click", function(e) {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach(el => el.classList.remove("active"));
+  }
+});
+
+  </script>
+  
+  <script>
+    const userIcon = document.getElementById('user-icon');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Toggle dropdown visibility on user icon click
+userIcon.addEventListener('click', function (e) {
+  e.preventDefault();  // Prevent default behavior (like linking)
+  dropdownMenu.classList.toggle('show');  // Toggle the dropdown visibility
+});
+
+// Close the dropdown if clicked outside
+document.addEventListener('click', function (e) {
+  if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.classList.remove('show');  // Close the dropdown if clicked outside
+  }
+});
+
+  </script>
+  
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      navbar.classList.toggle('show');
+      menuToggle.classList.toggle('open');
+    }
+</script>
+  
+</body>
+</html>

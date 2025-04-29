@@ -2,183 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Izer Med Pharmacy</title>
+  <title>About IzerMed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: whitesmoke; 
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 30px;
-        }
+  <style> 
+    /* General Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: whitesmoke; 
+        overflow-x: hidden;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 30px;
+    }
+    
+    .container h2 {
+        text-align: center;
+        font-size: 56px;
+        color: #0c0c0c;
+        margin-bottom: 50px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+    
+    .container h2:hover {
+        background: linear-gradient(135deg, #34A853, #1DA1F2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* About Section */
+    .about-section {
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out forwards;
+    }
+    
+    .about-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        padding: 40px;
+        max-width: 1000px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        color: #333; 
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all 1s ease;
+        animation: fadeInUp 1.5s ease-out forwards;
+    }
+    
+    .about-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .about-card h2 {
+        text-align: center;
+        font-size: 40px;
+        color: #333; 
+        margin: 30px 0 15px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    .about-card h2:hover {
+        background: linear-gradient(135deg, #34A853, #1DA1F2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }  
+    
+    .about-card p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555; 
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+    }
+    
+    .about-card ul {
+        list-style: none;
+        padding: 0;
+        color: #555;
+    }
+    
+    .about-card ul li {
+        font-size: 18px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 25px;
+    }
+    
+    /* Call to Action Button */
+    .c {
+        text-align: center;
+        margin-top: 70px;
+    }
+    
+    .c a {
+         background: linear-gradient(135deg, #34A853, #1DA1F2);
+         color: #fff;
+         padding: 18px 40px;
+         text-decoration: none;
+         font-size: 22px;
+         border-radius: 50px;
+         transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+         box-shadow: 0 6px 15px rgba(52, 168, 83, 0.3);
+    }
+    
+    .c a:hover {
+         background: linear-gradient(135deg, #1DA1F2, #34A853);
+         transform: translateY(-3px);
+         box-shadow: 0 8px 20px rgba(29, 161, 242, 0.3);
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 768px) {
         h1 {
-            text-align: center;
-            font-size: 56px;
-            color: #0c0c0c;
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+            font-size: 36px;
         }
-
-        h1:hover {
-            background: linear-gradient(135deg, #34A853, #1DA1F2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+    
+        .about-card h2 {
+            font-size: 28px;
         }
-
-        .about-section {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
+    
+        .about-card {
+            padding: 30px 20px;
+        }
+    
+        .c a {
+            font-size: 18px;
+            padding: 14px 30px;
+        }
+    }
+    
+    /* Fade and Slide Animation Keyframes */
+    @keyframes fadeInUp {
+        from {
             opacity: 0;
-            animation: fadeInUp 1.5s ease-out forwards;
-        }
-        .about-section div {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-            color: #333; 
             transform: translateY(50px);
-            opacity: 0;
-            transition: all 1s ease;
         }
-
-        .about-section div.visible {
+        to {
             opacity: 1;
             transform: translateY(0);
         }
-
-        .about-section div:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-        .about-section div:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-        .about-section div:nth-child(3) {
-            animation-delay: 0.9s;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 40px;
-            color: #333; 
-            margin-bottom: 20px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        h2:hover {
-            background: linear-gradient(135deg, #34A853, #1DA1F2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }  
-
-        .about-section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555; 
-            letter-spacing: 0.5px;
-            
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            color: #555;
-        }
-
-        ul li {
-            font-size: 18px;
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .c {
-            text-align: center;
-            margin-top: 70px;
-        }
-
-        .c a {
-             background: linear-gradient(135deg, #34A853, #1DA1F2);
-             color: #fff;
-             padding: 18px 40px;
-             text-decoration: none;
-             font-size: 22px;
-             border-radius: 50px;
-             transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-             box-shadow: 0 6px 15px rgba(52, 168, 83, 0.3);
-        }
-
-        .c a:hover {
-             background: linear-gradient(135deg, #1DA1F2, #34A853);
-             transform: translateY(-3px);
-             box-shadow: 0 8px 20px rgba(29, 161, 242, 0.3);
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .about-section div {
-                padding: 30px 20px;
-            }
-
-            .c a {
-                font-size: 18px;
-                padding: 14px 30px;
-            }
-        }
-
-        /* Fade and Slide Animation Keyframes */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    }
+  /* Spinner Style */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top-color: #00aaff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Fade-In Effect for Testimonials */
+  .swiper {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  .swiper.show {
+    opacity: 1;
+  }
+  </style>
+  
+    
 </head>
 <body>
 
@@ -201,24 +213,14 @@
           <img src="izerlogo.jpg" alt="Logo">
           <h2>IzerMed Pharmacy</h2>
         </div>
-        <div class="search-box-wrapper desktop-search">
-            <div class="search-box">
-              <input type="text" id="desktop-search-input" placeholder="Search product...">
-              <i class="fa-solid fa-magnifying-glass" id="desktop-search-btn"></i>
-              <div class="spinner" id="desktop-search-spinner"></div>
-            </div>
-            <div class="search-results" id="desktop-search-results">
-              <!-- Suggestions or popular items will go here -->
-            </div>
-        </div>
         <div class="user" id="user">
             <div class="dropdown">
                 <a href="#" id="user-icon">
                     <i class="fa-regular fa-user"></i>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
-                    <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                    <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
                 </div>
             </div>
             <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
@@ -231,24 +233,14 @@
           <img src="izerlogo.jpg" alt="Logo">
           <h2>IzerMed</h2>
         </div>
-        <div class="search-box-wrapper mobile-search">
-            <div class="search-box">
-              <input type="text" id="mobile-search-input" placeholder="Search product...">
-              <i class="fa-solid fa-magnifying-glass" id="mobile-search-btn"></i>
-              <div class="spinner" id="mobile-search-spinner"></div>
-            </div>
-            <div class="search-results" id="mobile-search-results">
-              <!-- Suggestions or popular items will go here -->
-            </div>
-        </div>
         <div class="user" id="user">
             <div class="dropdown">
                 <a href="#" id="user-icon">
                     <i class="fa-regular fa-user"></i>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="#"><i class="fa-solid fa-lock"></i> Sign In</a>
-                    <a href="#"><i class="fa-solid fa-user"></i> Create Account</a>
+                    <a href="login.html"><i class="fa-solid fa-lock"></i> Sign In</a>
+                    <a href="Signup.html"><i class="fa-solid fa-user"></i> Create Account</a>
                 </div>
             </div>
             <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
@@ -268,16 +260,14 @@
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <div class="dropdown">
-            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Medicine <i class="fa-solid fa-caret-down"></i></a>
-            <div class="dropdown-content">
-              <a href="#">Prescription</a>
-              <a href="#">Over-the-Counter</a>
-              <a href="#">Vitamins & Supplements</a>
-            </div>
+          <a href="javascript:void(0)" onclick="toggleDropdown(this)">Store Services <i class="fa-solid fa-caret-down"></i></a>
+          <div class="dropdown-content">
+              <a href="#">Order Online</a>
+              <a href="drug.html">Drug Information</a>
           </div>
-          
+        </div>
           <div class="dropdown">
-            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Categories <i class="fa-solid fa-caret-down"></i></a>
+            <a href="javascript:void(0)" onclick="toggleDropdown(this)">Our Products <i class="fa-solid fa-caret-down"></i></a>
             <div class="dropdown-content">
                 <a href="#">Prescription Medications</a>
                 <a href="#">Over-the-counter Medications</a>
@@ -290,33 +280,67 @@
         <a href="contact.html">Contact us</a>
       </div>
 
-    <div class="container">
-        <h1>About Us</h1>
+      <div class="container">
+        <h2>About Us</h2>
         <div class="about-section">
-            <div>
-                <h2>Who We Are</h2>
-                <p>We are a trusted pharmacy specializing in providing high-quality medications to help you manage your health. Our dedicated team ensures that every prescription is filled with accuracy and care. We are committed to supporting your well-being at every stage of life.</p>
-            </div>
-            <div>
-                <h2>Our Mission</h2>
-                <p>To offer a reliable, accessible source for all your medication needs, providing the best service and the highest quality products to ensure your health and well-being. We strive to make medication management simple, safe, and effective.</p>
-            </div>
-            <div>
-                <h2>Why Choose Us?</h2>
-                <ul>
-                    <li><span style="color: #34A853;">✓</span> Wide selection of prescription and over-the-counter medications</li>
-                    <li><span style="color: #34A853;">✓</span> Fast, accurate, and discreet service</li>
-                    <li><span style="color: #34A853;">✓</span> Expert guidance on medication usage</li>
-                    <li><span style="color: #34A853;">✓</span> Personalized medication advice tailored to your needs</li>
-                </ul>                
-            </div>
+          <div class="about-card visible">
+            <h2>Who We Are</h2>
+            <p>
+              Welcome to IzerMed Pharmacy – a trusted name in healthcare and wellness. We are a locally rooted yet forward-thinking pharmacy committed to serving individuals, families, and communities with personalized care and high-quality products. Our journey began with a simple goal: to make healthcare more compassionate, reliable, and accessible to everyone, regardless of background or location. We believe that trust is built over time, which is why we go beyond just dispensing medicine — we provide peace of mind. Every prescription filled, every question answered, and every health tip shared reflects our genuine commitment to your well-being. Backed by licensed pharmacists, knowledgeable staff, and a growing range of medical solutions, we are proud to be your partner in achieving a healthier life, one step at a time.
+            </p>
+      
+            <h2>Our Mission</h2>
+            <p>
+              At IzerMed Pharmacy, our mission is to bridge the gap between quality healthcare and the people who need it most. We aim to create a pharmacy experience that is built around trust, innovation, and care. Our focus goes beyond just providing medication — we advocate for proper medication adherence, preventive care, and long-term health management. By combining cutting-edge pharmaceutical practices with a warm, people-first approach, we hope to simplify the healthcare journey for every customer who walks through our doors. Whether it's a simple refill or a detailed consultation, our mission remains the same: to offer support, education, and empowerment to those seeking better health.
+            </p>
+      
+            <h2>What We Offer</h2>
+            <p>
+              Our services extend far beyond a typical pharmacy. We offer a diverse inventory of prescription and over-the-counter medications, medical supplies, wellness products, and personalized health consultations. Our modern approach includes online ordering, mobile-friendly browsing, and delivery options to ensure convenience without compromising care. In addition, we provide one-on-one medication counseling, health screenings, and chronic illness support for conditions such as diabetes, hypertension, and asthma. With flexible hours and a dedicated customer support team, IzerMed is here when you need us the most.
+            </p>
+      
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li><span style="color: #34A853;">✓</span> A comprehensive selection of affordable branded and generic medicines</li>
+              <li><span style="color: #34A853;">✓</span> Friendly and highly trained staff ready to assist with your concerns</li>
+              <li><span style="color: #34A853;">✓</span> Discreet and accurate handling of all prescriptions and medical queries</li>
+              <li><span style="color: #34A853;">✓</span> Health and wellness services tailored to your individual needs</li>
+              <li><span style="color: #34A853;">✓</span> Seamless in-store and online shopping experiences</li>
+              <li><span style="color: #34A853;">✓</span> Commitment to safe pharmaceutical practices and ethical standards</li>
+              <li><span style="color: #34A853;">✓</span> A growing base of loyal customers who trust us with their health</li>
+            </ul>
+      
+            <h2>Our Promise</h2>
+            <p>
+              We promise to uphold the values that have made IzerMed Pharmacy a trusted choice among families and individuals. Our dedication to innovation, compassion, and patient-first care drives us to continuously improve our services and support systems. We understand that behind every prescription is a person – a story, a need, a goal. That’s why we treat every customer with the respect, empathy, and attention they deserve. No matter what stage of health you're in, our team is always here to guide you, answer your questions, and support your journey toward a better, healthier tomorrow.
+            </p>
+          </div>
         </div>
+      
         <div class="c">
-            <a href="contact.html">Get In Touch</a>
+          <a href="contact.html">Get In Touch</a>
         </div>
-    </div>
+      </div>
 
-    <footer class="footer">
+      <div class="testimonials-container">
+        <h2>Testimonial</h2>
+      
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" style="text-align: center; margin: 30px 0;">
+          <div class="spinner"></div>
+          <p>Loading testimonials...</p>
+        </div>
+      
+        <div class="swiper mySwiper" style="display: none;"> <!-- Hide initially -->
+          <div class="swiper-wrapper" id="testimonial-wrapper">
+            <!-- Testimonials will be loaded dynamically -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      
+
+      <footer class="footer">
         <div class="footer-container">
           <div class="footer-section">
             <h3>Useful Links</h3>
@@ -347,10 +371,10 @@
           </div>
       
           <div class="footer-section">
-            <h3>About Izermed</h3>
-            <p>
-              At Izermed Pharmacy, we are committed to providing high-quality generic and branded medicines to support your health and well-being. We ensure that all our products are safe, effective, and affordable, catering to the needs of every customer.
-            </p>
+            <h3>Get Help</h3>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+            <p><a href="#">Refund Policy</a></p>
+            <p><a href="#">Terms and Service</a></p>
             <div class="social-iconss">
               <a href="https://www.facebook.com/share/16CLEaLoE2/?mibextid=wwXIfr" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
@@ -370,110 +394,6 @@
           <p>Developed by <a href="https://github.com/Lesthermonleon" target="_blank">@JLM</a></p>
         </div>
       </footer>
-      <<script>
-        // Get elements for both desktop and mobile
-    const desktopSearchInput = document.getElementById('desktop-search-input');
-    const desktopSearchResults = document.getElementById('desktop-search-results');
-    const desktopSearchBtn = document.getElementById('desktop-search-btn');
-    
-    const mobileSearchInput = document.getElementById('mobile-search-input');
-    const mobileSearchResults = document.getElementById('mobile-search-results');
-    const mobileSearchBtn = document.getElementById('mobile-search-btn');
-    
-    // Sample products list
-    const products = [
-      "Paracetamol",
-      "Ibuprofen",
-      "Vitamin C",
-      "Cough Syrup",
-      "Antibiotics",
-      "Face Mask",
-      "Alcohol",
-      "Hand Sanitizer",
-      "Thermometer",
-      "Glucose Meter"
-    ];
-    
-    // Function to show search suggestions
-    function showSuggestions(query, resultsContainer) {
-      const filtered = products.filter(product =>
-        product.toLowerCase().includes(query.toLowerCase())
-      );
-    
-      resultsContainer.innerHTML = "";  // Clear previous results
-    
-      if (filtered.length === 0) {
-        resultsContainer.innerHTML = "<div>No results found</div>";
-      } else {
-        filtered.forEach(item => {
-          const div = document.createElement("div");
-          div.textContent = item;
-          div.style.cursor = "pointer";
-    
-          // Add click event for selection
-          div.addEventListener("click", () => {
-            if (resultsContainer === desktopSearchResults) {
-              desktopSearchInput.value = item; // Set input to selected item
-            } else {
-              mobileSearchInput.value = item; // Set input to selected item
-            }
-            resultsContainer.style.display = "none"; // Hide suggestions
-          });
-    
-          resultsContainer.appendChild(div);
-        });
-      }
-    
-      // Show the suggestions dropdown
-      resultsContainer.style.display = "block";
-    }
-    
-    // Handle input and trigger suggestions
-    function handleInput(inputElement, resultsContainer) {
-      const query = inputElement.value.trim();
-      if (query.length > 0) {
-        showSuggestions(query, resultsContainer);  // Show suggestions if input is non-empty
-      } else {
-        resultsContainer.style.display = "none";  // Hide suggestions if input is empty
-      }
-    }
-    
-    // Event listener for input (live search)
-    desktopSearchInput.addEventListener("input", () => handleInput(desktopSearchInput, desktopSearchResults));
-    mobileSearchInput.addEventListener("input", () => handleInput(mobileSearchInput, mobileSearchResults));
-    
-    // Event listener for search button click
-    desktopSearchBtn.addEventListener("click", () => handleInput(desktopSearchInput, desktopSearchResults));
-    mobileSearchBtn.addEventListener("click", () => handleInput(mobileSearchInput, mobileSearchResults));
-    
-    // Close suggestions when clicking outside (mobile + desktop)
-    document.addEventListener("click", function (e) {
-      const isClickInside = e.target.closest(".search-box-wrapper");
-      if (!isClickInside) {
-        desktopSearchResults.style.display = "none"; // Hide results if click is outside desktop search box
-        mobileSearchResults.style.display = "none"; // Hide results if click is outside mobile search box
-      }
-    });
-    
-    // Optional: For mobile (touch devices)
-    document.addEventListener("touchstart", function (e) {
-      const isTouchInside = e.target.closest(".search-box-wrapper");
-      if (!isTouchInside) {
-        desktopSearchResults.style.display = "none"; // Hide results on touch if click is outside desktop search box
-        mobileSearchResults.style.display = "none"; // Hide results on touch if click is outside mobile search box
-      }
-    });
-    
-    // Debug: Log when input is being handled
-    desktopSearchInput.addEventListener("input", function () {
-      console.log("Desktop Input value:", desktopSearchInput.value);  // Log the input value to debug
-    });
-    
-    mobileSearchInput.addEventListener("input", function () {
-      console.log("Mobile Input value:", mobileSearchInput.value);  // Log the input value to debug
-    });
-    
-      </script>
     
       <script>
         function toggleDropdown(element) {
@@ -516,8 +436,6 @@
     
       </script>
       
-      
-    
       <script>
         function toggleMenu() {
           const navbar = document.getElementById('navbar');
@@ -526,21 +444,57 @@
           menuToggle.classList.toggle('open');
         }
     </script>
-  <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
 
-        document.querySelectorAll('.about-section div').forEach((section) => {
-            observer.observe(section);
-        });
-    </script>
+<script>
+  async function loadTestimonials() {
+    try {
+      // Simulating an API call
+      const response = await fetch('your-server-endpoint/getTestimonials.php');
+      const testimonials = await response.json();
+  
+      const wrapper = document.getElementById('testimonial-wrapper');
+      testimonials.forEach(t => {
+        const slide = document.createElement('div');
+        slide.classList.add('swiper-slide');
+        slide.innerHTML = `
+          <img src="${t.image}" class="profile-img" />
+          <div class="name">${t.name}</div>
+          <div class="location">${t.location}</div>
+          <div class="message">${t.message}</div>
+        `;
+        wrapper.appendChild(slide);
+      });
+  
+      // After loading testimonials:
+      document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner
+      const swiperContainer = document.querySelector('.mySwiper');
+      swiperContainer.style.display = 'block'; // Show swiper
+      swiperContainer.classList.add('show'); // Apply fade-in effect
+  
+      // Initialize Swiper
+      new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+  
+    } catch (error) {
+      console.error('Failed to load testimonials:', error);
+      document.getElementById('loading-spinner').innerHTML = '<p style="color: red;">Failed to load testimonials. Please try again later.</p>';
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', loadTestimonials);
+  </script>
+  
 
 </body>
 </html>

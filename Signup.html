@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    /* Reset default styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #34A853, #1DA1F2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      min-height: 300px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px 35px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .logo {
+      width: 50px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Form Fields */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+      border-color: #34A853;
+      outline: none;
+      transform: scale(1.03);
+    }
+
+    /* Button */
+    button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #34A853, #1DA1F2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #1DA1F2, #34A853);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(29, 161, 242, 0.3);
+    }
+
+    /* Switch Link */
+    .switch {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .switch a {
+      color: #34A853;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .switch a:hover {
+      color: #1DA1F2;
+    }
+
+    /* Terms Checkbox */
+    .terms {
+      text-align: left;
+      font-size: 0.85em;
+      margin: 10px 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .terms input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .terms a {
+      color: #34A853;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        max-width: 350px; /* Smaller size for mobile */
+        padding: 35px 25px; /* Adjust padding */
+      }
+
+      h2 {
+        font-size: 1.8em; /* Slightly smaller heading on mobile */
+      }
+
+      .logo {
+        width: 45px; /* Slightly smaller logo on mobile */
+      }
+
+      input[type="text"], input[type="password"], input[type="email"] {
+        font-size: 0.95em; /* Slightly smaller font size for inputs */
+      }
+
+      button {
+        font-size: 1em; /* Adjust button font size */
+      }
+
+      .terms {
+        font-size: 0.8em; /* Smaller font size for terms on mobile */
+      }
+
+      .switch a {
+        font-size: 0.95em; /* Smaller font size for switch link */
+      }
+    }
+
+    /* Very small devices (portrait phones, less than 480px) */
+    @media (max-width: 480px) {
+      .container {
+        max-width: 300px; /* Even smaller container for very small devices */
+        padding: 30px 20px; /* Further reduce padding */
+      }
+
+      h2 {
+        font-size: 1.6em; /* Smaller heading on very small devices */
+      }
+
+      .logo {
+        width: 40px; /* Smaller logo for very small devices */
+      }
+
+      input[type="text"], input[type="password"], input[type="email"] {
+        font-size: 0.9em; /* Smaller input text size */
+      }
+
+      button {
+        font-size: 0.95em; /* Adjust button font size */
+      }
+
+      .terms {
+        font-size: 0.75em; /* Smaller font for terms */
+      }
+
+      .switch a {
+        font-size: 0.9em; /* Smaller switch link font size */
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 101%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form active" id="signUpForm">
+      <img src="izerlogo.jpg" alt="IzerMed Logo" class="logo">
+      <h2>Sign Up</h2>
+      <form id="signUpFormElement" onsubmit="return validateForm()">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="email" id="signUpEmail" placeholder="Email" required>
+        <input type="password" id="signUpPassword" placeholder="Password" required minlength="6">
+        
+        <!-- IzerMed Terms and Privacy Agreement -->
+        <div class="terms">
+          <input type="checkbox" id="agreeTerms" required>
+          <label for="agreeTerms">
+            I agree to the <a href="#" id="termsLink">Terms & Conditions</a> of IzerMed to register.<br>
+          </label>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="agreePrivacy" required>
+          <label for="agreePrivacy">
+            I agree and give my explicit consent to the collection, use, processing, and sharing of my personal information in accordance with the <a href="#" id="privacyLink">Privacy Policy</a> of IzerMed.
+          </label>
+        </div>
+    
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="switch">
+        <p>Already have an account? <a href="Login.html">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Terms & Conditions -->
+<div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Terms & Conditions</h2>
+      <p><strong>Terms of Service</strong><br>
+      IzerMed Pharmacy makes this website, including all information, products, and services provided through the IzerMed Pharmacy online store, available for your use subject to the terms and conditions set forth in this document and any changes to this document that IzerMed Pharmacy may publish from time to time. By visiting or shopping at the IzerMed Pharmacy online store, you accept to be bound by these Terms of Service and agree that you are responsible for compliance with any applicable laws and regulations.</p>
+  
+      <p>IzerMed Pharmacy reserves the right to change the Terms of Service posted on the website from time to time at its sole discretion. Your use of the website will be subject to the most current version of the Terms of Service posted on the website at the time of such use. We collect and use information about you to reply to your request, process your order, and help personalize your shopping experience at the IzerMed Pharmacy online store. We use the same information to identify and contact you, verify and confirm your order, and provide customer care services. Please review our Privacy Policy for information on our terms and privacy practices.</p>
+  
+      <p>The content on this website, such as text, graphics, logos, media files, and content compilations, is protected by copyright, trademark, and/or other intellectual property laws. Content on the IzerMed Pharmacy webstore is provided “as is,” and changes and updates may be made to the products and services at any time without notice. IzerMed Pharmacy makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or noninfringement of intellectual property or other violation of rights. Further, IzerMed Pharmacy does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the content on its website or otherwise relating to such content or on any linked websites.</p>
+  
+      <p>We shall not be liable for any breach, hindrance, or delay in fulfilling orders attributable to any cause beyond our reasonable control, including without limitation any natural disaster or unavoidable incident, actions of third parties (including, without limitation, hackers, suppliers, governments, quasi-governmental, supra-national or local authorities), insurrection, riot, civil commotion, war, hostilities, warlike operations, national emergencies, terrorism, piracy, arrests, restraints or detainments of any competent authority, strikes or combinations or lock-out of workmen, epidemic, fire, explosion, storm, flood, drought, weather conditions, earthquake, natural disaster, accident, mechanical breakdown, third-party software, failure or problems with public utility supplies (including electrical, telecoms, or Internet failure), shortage of or inability to obtain supplies, materials, equipment, or transportation (“Event of Force Majeure”), regardless of whether the circumstances in question could have been foreseen.</p>
+    </div>
+  </div>
+  
+
+  <!-- Modal for Privacy Policy -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Data Privacy Policy</h2>
+      <p><strong>Introduction</strong></p>
+      <p>IzerMed Pharmacy is committed to providing you with quality pharmaceutical services, including prescription and over-the-counter medications, health products, and personal care. Our mission is to make your shopping experience as convenient and secure as possible, both online and in-store. We respect your privacy and are dedicated to safeguarding your personal data. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with the Data Privacy Act of 2012 (DPA) and other relevant regulations.</p>
+  
+      <p>IzerMed Pharmacy (through its website, <a href="https://izermed.com.ph">izermed.com.ph</a>) is committed to the protection and management of your personal data that you voluntarily provide. This Privacy Policy will explain how we process your personal data and what rights you have regarding it.</p>
+  
+      <p><strong>Why Do We Collect Your Personal Data?</strong></p>
+      <p>We collect personal data to ensure that we provide you with an enhanced online shopping experience. The information you share with us allows us to fulfill your orders, improve our services, and notify you about promotions, discounts, and other services.</p>
+      <p>We use your data for the following purposes:</p>
+      <ul>
+        <li>To facilitate online orders and deliveries to your home or office.</li>
+        <li>To create and manage your IzerMed Pharmacy account, allowing you to:
+          <ul>
+            <li>Store items in your shopping cart between visits.</li>
+            <li>Proceed through checkout faster.</li>
+            <li>Check order status and history.</li>
+            <li>Update your account and shipping details.</li>
+            <li>Submit product reviews and feedback.</li>
+            <li>Receive promotional offers and newsletters.</li>
+          </ul>
+        </li>
+        <li>To improve our customer experience through surveys and analysis.</li>
+        <li>To comply with legal and regulatory obligations.</li>
+      </ul>
+  
+      <p><strong>What Type of Personal Data We Collect</strong></p>
+      <p>Depending on the services you use, we may collect the following types of personal data:</p>
+      <ul>
+        <li>Basic personal information: Name, email address, phone number, shipping and billing addresses, and account credentials (username and password).</li>
+        <li>Sensitive personal information: Date of birth, gender, occupation, and medical history.</li>
+        <li>Payment details: Credit card information and billing address.</li>
+        <li>Transaction data: Order history, products purchased, and feedback.</li>
+      </ul>
+      <p>Please ensure that the personal data you provide is accurate, complete, and up-to-date.</p>
+  
+      <p><strong>Cookies and Web Analytics</strong></p>
+      <p>We use cookies to enhance your browsing experience. Cookies are small files placed on your device to remember preferences, improve website functionality, and track usage patterns. You can disable cookies in your browser settings, but doing so may affect the functionality of our website.</p>
+      <p>We also use third-party analytics tools to analyze website traffic. These tools collect non-identifiable information such as:
+      <ul>
+        <li>IP address</li>
+        <li>Pages visited</li>
+        <li>Time and date of visit</li>
+        <li>Referring websites</li>
+        <li>Web browser type and operating system</li>
+      </ul>
+      This data helps us improve our services and is not shared with other parties.</p>
+  
+      <p><strong>Sharing Your Personal Data</strong></p>
+      <p>We may share your personal data in the following circumstances:</p>
+      <ul>
+        <li>With trusted partners, service providers, or contractors who assist with fulfilling orders, processing payments, or delivering services.</li>
+        <li>With law enforcement or government agencies, as required by law.</li>
+        <li>As necessary to comply with legal and regulatory obligations.</li>
+      </ul>
+  
+      <p><strong>How We Protect Your Personal Data</strong></p>
+      <p>We implement strong security measures to protect your personal data from unauthorized access, loss, misuse, or disclosure. These measures include:
+      <ul>
+        <li>Secure servers with encryption.</li>
+        <li>Restricting access to authorized personnel.</li>
+        <li>Safeguarding payment information by only displaying the last four digits of your credit card number.</li>
+        <li>Keeping your personal data in secure locations with limited access.</li>
+      </ul>
+      </p>
+  
+      <p><strong>How Long We Keep Your Personal Data</strong></p>
+      <p>We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected or as required by law. When no longer needed, we will securely delete or anonymize your data.</p>
+  
+      <p><strong>Changes to This Privacy Policy</strong></p>
+      <p>From time to time, IzerMed Pharmacy may update this Privacy Policy to reflect changes in laws or our services. Any revisions will be posted on this page, and the updated policy will take effect immediately. We encourage you to review this policy periodically.</p>
+  
+      <p><strong>Access, Correction, and Deletion of Your Personal Data</strong></p>
+      <p>You have the right to access, correct, or request the deletion of your personal data at any time. To exercise these rights, please contact us through our website or via email at <a href="mailto:privacy@izermed.com.ph">privacy@izermed.com.ph</a>.</p>
+      <p>For further inquiries or complaints about our Privacy Policy, please contact our Data Protection Officer at:</p>
+  
+      <p>IzerMed Pharmacy<br>
+        <strong>Email:</strong> <a href="mailto:privacy@izermed.com.ph">privacy@izermed.com.ph</a><br>
+        <strong>Phone:</strong> +63 (2) 123-4567
+      </p>
+  
+      <p>You may also lodge a complaint with the National Privacy Commission (NPC) if you believe that we have not addressed your concerns adequately.</p>
+  
+      <p><strong>Conclusion</strong></p>
+      <p>IzerMed Pharmacy is committed to ensuring that your personal data is handled securely and responsibly. Your privacy is important to us, and we strive to maintain the trust you place in our services.</p>
+      <p>This Privacy Policy was last updated on <strong>April 20, 2025</strong>.</p>
+    </div>
+  </div>
+  
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById("signUpEmail").value;
+      const password = document.getElementById("signUpPassword").value;
+      const agreeTerms = document.getElementById("agreeTerms").checked;
+      const agreePrivacy = document.getElementById("agreePrivacy").checked;
+
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      if (password.trim() === "") {
+        alert("Password is required.");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+
+      if (!agreeTerms || !agreePrivacy) {
+        alert("You must agree to the Terms & Conditions and Privacy Policy to sign up.");
+        return false;
+      }
+
+      return true;
+    }
+
+    // Open and close the modals
+    const termsLink = document.getElementById("termsLink");
+    const privacyLink = document.getElementById("privacyLink");
+    const termsModal = document.getElementById("termsModal");
+    const privacyModal = document.getElementById("privacyModal");
+    const closeButtons = document.querySelectorAll(".close");
+
+    termsLink.onclick = function() {
+      termsModal.style.display = "block";
+    }
+
+    privacyLink.onclick = function() {
+      privacyModal.style.display = "block";
+    }
+
+    closeButtons.forEach(button => {
+      button.onclick = function() {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+      }
+    });
+
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+      if (event.target === termsModal || event.target === privacyModal) {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
